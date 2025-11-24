@@ -1,0 +1,105 @@
+        body {
+            background-color: white;
+        }
+
+        .header-bg {
+            background: linear-gradient(135deg, #1e40af, #1d4ed8);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-item {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover {
+            background-color: #1e40af;
+        }
+
+        .nav-active {
+            background-color: #1e40af;
+        }
+
+        .mobile-menu {
+            display: none;
+            background-color: #1e40af;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .footer-bg {
+            background: #1f2937;
+            color: #f1f5f9;
+            border-top: 1px solid #374151;
+        }
+
+        .footer-link {
+            color: #9ca3af;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        .footer-section h3 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .copyright {
+            color: #6b7280;
+            font-size: 0.875rem;
+            padding-top: 1rem;
+            border-top: 1px solid #374151;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .header-shape {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30%;
+            height: 100%;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+            z-index: -1;
+        }
+
+        @media (max-width: 768px) {
+            .header-shape {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .desktop-menu {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 1rem;
+                right: 1rem;
+                background: linear-gradient(135deg, #1e40af, #1d4ed8);
+                border-radius: 0.5rem;
+                padding: 1rem;
+                z-index: 50;
+            }
+
+            .desktop-menu.active {
+                display: block;
+            }
+        }
