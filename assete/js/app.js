@@ -10,414 +10,355 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll('.nav-item').forEach(item => {
         item.addEventListener('click', function () {
-            document.querySelectorAll('.nav-item').forEach(el => {
-                el.classList.remove('nav-active');
-            });
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('nav-active'));
             this.classList.add('nav-active');
         });
     });
 
     const jobsData = [
-        {
-            id: 1,
-            title: "Frontend Developer",
-            company: "PT Teknologi Maju Bersama",
-            location: "Jakarta",
-            type: "Full-time",
-            posted: "2 days ago",
-            skills: ["React", "JavaScript", "TailwindCSS"],
-            salary: "IDR 8-12 Juta/bulan",
-            description: "Mengembangkan aplikasi web menggunakan teknologi modern dengan fokus pada user experience.",
-            details: "Bertanggung jawab untuk mengembangkan antarmuka pengguna yang responsif dan interaktif untuk platform digital kami. Bekerja sama dengan tim desain dan backend untuk memastikan implementasi yang sempurna dari fitur-fitur baru.",
-            requirements: [
-                "Minimal 1 tahun pengalaman sebagai Frontend Developer",
-                "Menguasai React.js dan JavaScript ES6+",
-                "Memahami konsep UI/UX dasar",
-                "Mampu bekerja dalam tim dan memiliki komunikasi yang baik",
-                "Bersedia belajar teknologi baru secara mandiri"
-            ],
-            logo: "TM"
+        { id: 1, 
+        title: 
+        "Frontend Developer", 
+        company: "PT Teknologi Maju", 
+        location: "Jakarta", 
+        type: "Full-time", 
+        posted: "2 days ago", 
+        skills: ["React", "Tailwind"], 
+        salary: "IDR 8-12 Juta", 
+        logo: "TM" 
+    },
+        { id: 2, 
+            title: "Digital Marketing", 
+            company: "CV Inovasi", 
+            location: "Yogyakarta", 
+            type: "Magang", 
+            posted: "5 days ago", 
+            skills: ["SEO", "Ads"], 
+            salary: "IDR 2-3 Juta", 
+            logo: "ID" 
         },
-        {
-            id: 2,
-            title: "Digital Marketing Specialist",
-            company: "CV Inovasi Digital",
-            location: "Yogyakarta",
-            type: "Magang",
-            posted: "5 days ago",
-            skills: ["SEO", "Social Media", "Analytics"],
-            salary: "IDR 2-3 Juta/bulan",
-            description: "Mengelola strategi pemasaran digital untuk meningkatkan brand awareness dan konversi.",
-            details: "Membantu dalam merancang dan mengeksekusi kampanye pemasaran digital melalui berbagai platform media sosial dan mesin pencari. Menganalisis data performa kampanye dan memberikan rekomendasi perbaikan.",
-            requirements: [
-                "Mahasiswa semester 5 ke atas jurusan Komunikasi, Bisnis, atau terkait",
-                "Memahami dasar-dasar SEO dan media sosial",
-                "Mampu menggunakan Google Analytics dan Facebook Insights",
-                "Kreatif dan memiliki ide-ide inovatif",
-                "Mampu bekerja secara mandiri dan dalam tim"
-            ],
-            logo: "ID"
+        { id: 3, 
+            title: "Data Analyst", 
+            company: "Bank Finansial", 
+            location: "Surabaya", 
+            type: "Full-time", 
+            posted: "1 week ago", 
+            skills: ["Python", "SQL"], 
+            salary: "IDR 10-15 Juta", 
+            logo: "BFI" 
         },
-        {
-            id: 3,
-            title: "Data Analyst",
-            company: "Bank Finansial Indonesia",
-            location: "Surabaya",
-            type: "Full-time",
-            posted: "1 week ago",
-            skills: ["Python", "SQL", "Power BI"],
-            salary: "IDR 10-15 Juta/bulan",
-            description: "Menganalisis data untuk memberikan insights yang mendukung pengambilan keputusan bisnis.",
-            details: "Mengumpulkan, membersihkan, dan menganalisis data dari berbagai sumber untuk mengidentifikasi tren dan pola yang relevan bagi bisnis. Membuat laporan dan visualisasi data yang mudah dipahami oleh manajemen.",
-            requirements: [
-                "Lulusan S1 Statistik, Matematika, atau bidang terkait",
-                "Menguasai Python dan SQL untuk analisis data",
-                "Berpengalaman dengan Power BI atau Tableau",
-                "Memiliki kemampuan analitis yang kuat",
-                "Mampu menyampaikan temuan secara jelas dan efektif"
-            ],
-            logo: "BFI"
+        { id: 4, 
+            title: "Backend Developer", 
+            company: "Startup Digital", 
+            location: "Bandung", 
+            type: "Full-time", 
+            posted: "3 days ago", 
+            skills: ["Node.js", "MongoDB"], 
+            salary: "IDR 9-13 Juta", 
+            logo: "SDI" 
         },
-        {
-            id: 4,
-            title: "Backend Developer",
-            company: "Startup Digital Indonesia",
-            location: "Bandung",
-            type: "Full-time",
-            posted: "3 days ago",
-            skills: ["Node.js", "Express", "MongoDB"],
-            salary: "IDR 9-13 Juta/bulan",
-            description: "Membangun dan memelihara server, database, dan aplikasi backend untuk platform digital.",
-            details: "Merancang dan mengimplementasikan arsitektur backend yang skalabel dan aman. Mengoptimalkan performa sistem dan memastikan integritas data. Bekerja sama dengan tim frontend untuk integrasi API.",
-            requirements: [
-                "Minimal 2 tahun pengalaman sebagai Backend Developer",
-                "Menguasai Node.js, Express, dan MongoDB",
-                "Memahami prinsip RESTful API dan GraphQL",
-                "Mampu bekerja dengan Docker dan cloud services",
-                "Memiliki pengetahuan tentang security best practices"
-            ],
-            logo: "SDI"
+        { id: 5, 
+            title: "UX Designer", 
+            company: "Design Studio", 
+            location: "Jakarta", 
+            type: "Part-time", 
+            posted: "1 day ago", 
+            skills: ["Figma", "UI/UX"], 
+            salary: "IDR 6-8 Juta", 
+            logo: "DSC" 
         },
-        {
-            id: 5,
-            title: "UX Designer",
-            company: "Design Studio Creative",
-            location: "Jakarta",
-            type: "Part-time",
-            posted: "1 day ago",
-            skills: ["Figma", "Adobe XD", "User Research"],
-            salary: "IDR 6-8 Juta/bulan",
-            description: "Merancang pengalaman pengguna yang intuitif dan menarik untuk produk digital.",
-            details: "Melakukan riset pengguna, membuat wireframe dan prototipe, serta melakukan pengujian usability untuk memastikan produk sesuai dengan kebutuhan pengguna. Bekerja sama dengan tim developer untuk implementasi desain.",
-            requirements: [
-                "Portofolio desain UX/UI yang menunjukkan proses kerja",
-                "Menguasai Figma atau Adobe XD",
-                "Memahami prinsip desain UX dan user-centered design",
-                "Mampu melakukan riset pengguna dan analisis hasil",
-                "Kemampuan komunikasi yang baik untuk presentasi dan kolaborasi"
-            ],
-            logo: "DSC"
+        { id: 6, 
+            title: "Project Manager", 
+            company: "Consulting Group", 
+            location: "Medan", 
+            type: "Full-time", 
+            posted: "1 week ago", 
+            skills: ["Agile", "Scrum"], 
+            salary: "IDR 15-20 Juta", 
+            logo: "CGI" 
         },
-        {
-            id: 6,
-            title: "Project Manager",
-            company: "Consulting Group International",
-            location: "Medan",
-            type: "Full-time",
-            posted: "1 week ago",
-            skills: ["Agile", "Scrum", "Risk Management"],
-            salary: "IDR 15-20 Juta/bulan",
-            description: "Mengelola proyek dari awal hingga akhir, memastikan proyek selesai tepat waktu dan sesuai anggaran.",
-            details: "Merencanakan, mengorganisir, dan mengkoordinasikan sumber daya untuk mencapai tujuan proyek. Memantau kemajuan proyek, mengelola risiko, dan berkomunikasi dengan stakeholder. Menggunakan metodologi Agile dan Scrum dalam manajemen proyek.",
-            requirements: [
-                "Sertifikasi PMP atau Scrum Master merupakan nilai tambah",
-                "Minimal 3 tahun pengalaman sebagai Project Manager",
-                "Menguasai metodologi Agile dan Scrum",
-                "Kemampuan manajemen risiko dan resolusi masalah",
-                "Kemampuan kepemimpinan dan komunikasi yang kuat"
-            ],
-            logo: "CGI"
+        { id: 7, 
+            title: "Content Writer", 
+            company: "Media Kreatif", 
+            location: "Bandung", 
+            type: "Part-time", 
+            posted: "2 days ago", 
+            skills: ["Copywriting", "SEO"], 
+            salary: "IDR 4-5 Juta", 
+            logo: "MK" 
+        },
+        { id: 8, 
+            title: "DevOps Engineer", 
+            company: "Cloud System", 
+            location: "Jakarta", 
+            type: "Full-time", 
+            posted: "3 days ago", 
+            skills: ["AWS", "Docker"], 
+            salary: "IDR 18-25 Juta", 
+            logo: "CS" 
+        },
+        { id: 9, 
+            title: "HR Staff", 
+            company: "Retail Indo", 
+            location: "Surabaya", 
+            type: "Full-time", 
+            posted: "4 days ago", 
+            skills: ["Recruitment", "Psychology"], 
+            salary: "IDR 5-7 Juta", 
+            logo: "RI" 
+        },
+        { id: 10, 
+            title: "Sales Executive", 
+            company: "Auto Mobil", 
+            location: "Jakarta", 
+            type: "Full-time", 
+            posted: "1 day ago", 
+            skills: ["Sales", "Negotiation"], 
+            salary: "IDR 5-8 Juta", 
+            logo: "AM" 
         }
     ];
 
-    function renderJobCards(jobs) {
-        const jobListingsContainer = document.getElementById('jobListings');
-        jobListingsContainer.innerHTML = '';
+    const itemsPerPage = 6;
+    let currentPage = 1;
+    let filteredJobs = [...jobsData]; 
 
-        if (jobs.length === 0) {
-            jobListingsContainer.innerHTML = `
-                <div class="col-span-full text-center py-8 text-gray-500">
-                    Tidak ada lowongan yang sesuai dengan pencarian Anda.
-                </div>
-            `;
+    function createPageBtn(text, onClick, isActive = false) {
+        const btn = document.createElement('button');
+        btn.innerHTML = text;
+        btn.className = `w-10 h-10 flex items-center justify-center rounded-lg text-sm font-bold transition-all ${
+            isActive 
+            ? 'bg-blue-600 text-white shadow-md scale-105' 
+            : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50 hover:border-blue-300'
+        }`;
+        btn.addEventListener('click', onClick);
+        return btn;
+    }
+
+    function changePage(page) {
+        currentPage = page;
+        renderDisplay();
+        const listings = document.getElementById('jobListings');
+        if (listings) {
+            listings.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    function renderDisplay() {
+        const container = document.getElementById('jobListings');
+        const pagination = document.getElementById('pagination');
+        
+        if (!container) return;
+        container.innerHTML = '';
+        if (pagination) pagination.innerHTML = '';
+
+        if (filteredJobs.length === 0) {
+            container.innerHTML = `<div class="col-span-full text-center py-12 text-gray-500">Tidak ada lowongan yang sesuai.</div>`;
             return;
         }
 
-        jobs.forEach(job => {
-            const jobCard = document.createElement('div');
-            jobCard.className = 'job-card';
-            
-            let typeClass = '';
-            let typeText = '';
-            if (job.type === 'Full-time') {
-                typeClass = 'full-time';
-                typeText = 'Full-time';
-            } else if (job.type === 'Magang') {
-                typeClass = 'magang';
-                typeText = 'Magang';
-            } else if (job.type === 'Part-time') {
-                typeClass = 'part-time';
-                typeText = 'Part-time';
-            }
+        const start = (currentPage - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        const pageData = filteredJobs.slice(start, end);
+        const totalPages = Math.ceil(filteredJobs.length / itemsPerPage);
 
-            jobCard.innerHTML = `
-                <div class="job-type-badge ${typeClass}">${typeText}</div>
-                <div class="job-header">
-                    <div class="company-logo">${job.logo}</div>
+        pageData.forEach((job, index) => {
+            const card = document.createElement('div');
+            card.className = 'job-card bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 relative group job-card-animate';
+            card.style.animationDelay = `${index * 100}ms`;
+
+            let badgeClass = job.type === 'Full-time' ? 'bg-blue-100 text-blue-700' : (job.type === 'Magang' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700');
+
+            card.innerHTML = `
+                <div class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold ${badgeClass}">${job.type}</div>
+                <div class="flex items-start mb-4 pr-16">
+                    <div class="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center font-bold text-blue-600 mr-3 text-sm">${job.logo}</div>
                     <div>
-                        <div class="job-title">${job.title}</div>
-                        <div class="company-name">${job.company}</div>
+                        <h3 class="font-bold text-gray-800 text-lg leading-tight group-hover:text-blue-600 transition-colors">${job.title}</h3>
+                        <p class="text-sm text-gray-500 mt-1">${job.company}</p>
                     </div>
                 </div>
-                <div class="job-meta">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>${job.location}</span>
+                <div class="text-sm text-gray-500 space-y-2 mb-4">
+                    <div class="flex items-center gap-2"><i class="fas fa-map-marker-alt w-4"></i> ${job.location}</div>
+                    <div class="flex items-center gap-2"><i class="far fa-clock w-4"></i> Posted ${job.posted}</div>
                 </div>
-                <div class="job-meta">
-                    <i class="far fa-clock"></i>
-                    <span>Posted ${job.posted}</span>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    ${job.skills.map(skill => `<span class="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-md border border-gray-100">${skill}</span>`).join('')}
                 </div>
-                <div class="job-tags">
-                    ${job.skills.map(skill => `<span class="job-tag">${skill}</span>`).join('')}
-                </div>
-                <div class="job-salary">${job.salary}</div>
-                <div class="job-buttons">
-                    <button class="detail-button" onclick="showJobDetail(${job.id})">
-                        <i class="fas fa-eye mr-2"></i>Lihat Detail
-                    </button>
-                    <a href="#" class="apply-button">
-                        <i class="fas fa-paper-plane mr-2"></i>Lamar
-                    </a>
+                <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
+                    <span class="font-bold text-gray-800 text-sm">${job.salary}</span>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition" onclick="alert('Lamar ${job.title}')">Lamar</button>
                 </div>
             `;
-
-            jobListingsContainer.appendChild(jobCard);
+            container.appendChild(card);
         });
+
+        if (totalPages > 1 && pagination) {
+            if(currentPage > 1) {
+                const prevBtn = createPageBtn('<', () => changePage(currentPage - 1));
+                pagination.appendChild(prevBtn);
+            }
+
+            for (let i = 1; i <= totalPages; i++) {
+                const btn = createPageBtn(i, () => changePage(i), i === currentPage);
+                pagination.appendChild(btn);
+            }
+
+            if(currentPage < totalPages) {
+                const nextBtn = createPageBtn('>', () => changePage(currentPage + 1));
+                pagination.appendChild(nextBtn);
+            }
+        }
     }
-
-    window.showJobDetail = function(jobId) {
-        const job = jobsData.find(j => j.id === jobId);
-        if (!job) return;
-
-        document.getElementById('modalJobTitle').textContent = job.title;
-        document.getElementById('modalCompanyName').textContent = job.company;
-        document.getElementById('modalLocation').querySelector('span').textContent = job.location;
-        document.getElementById('modalCompanyLogo').textContent = job.logo;
-        document.getElementById('modalDescription').textContent = job.description;
-        document.getElementById('modalDetails').textContent = job.details;
-        
-        const jobTypeBadge = document.getElementById('modalJobType');
-        if (job.type === 'Full-time') {
-            jobTypeBadge.textContent = 'Full-time';
-            jobTypeBadge.className = 'inline-block px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800';
-        } else if (job.type === 'Magang') {
-            jobTypeBadge.textContent = 'Magang';
-            jobTypeBadge.className = 'inline-block px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800';
-        } else if (job.type === 'Part-time') {
-            jobTypeBadge.textContent = 'Part-time';
-            jobTypeBadge.className = 'inline-block px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800';
-        }
-
-        const requirementsList = document.getElementById('modalRequirements');
-        requirementsList.innerHTML = '';
-        job.requirements.forEach(req => {
-            const li = document.createElement('li');
-            li.textContent = req;
-            requirementsList.appendChild(li);
-        });
-
-        document.getElementById('jobDetailModal').classList.remove('hidden');
-    };
-
-    document.getElementById('closeModal').addEventListener('click', () => {
-        document.getElementById('jobDetailModal').classList.add('hidden');
-    });
-
-    document.getElementById('jobDetailModal').addEventListener('click', (e) => {
-        if (e.target.id === 'jobDetailModal') {
-            document.getElementById('jobDetailModal').classList.add('hidden');
-        }
-    });
-
-    renderJobCards(jobsData);
 
     const searchInput = document.getElementById('searchInput');
-    const sectorFilter = document.getElementById('sectorFilter');
-    const locationFilter = document.getElementById('locationFilter');
+    const sectorFilter = document.getElementById('sectorFilter'); // Hidden Select
+    const locationFilter = document.getElementById('locationFilter'); // Hidden Select
     const searchButton = document.getElementById('searchButton');
-    const viewAllJobs = document.getElementById('viewAllJobs');
 
     function filterJobs() {
-        const searchTerm = searchInput.value.toLowerCase().trim();
-        const selectedSector = sectorFilter.value;
-        const selectedLocation = locationFilter.value;
+        const term = searchInput ? searchInput.value.toLowerCase().trim() : '';
+        const sector = sectorFilter ? sectorFilter.value : '';
+        const loc = locationFilter ? locationFilter.value : '';
 
-        let filteredJobs = jobsData.filter(job => {
-            const matchesSearch = !searchTerm || 
-                job.title.toLowerCase().includes(searchTerm) || 
-                job.company.toLowerCase().includes(searchTerm) ||
-                job.description.toLowerCase().includes(searchTerm) ||
-                job.details.toLowerCase().includes(searchTerm);
+        filteredJobs = jobsData.filter(job => {
+            const matchSearch = !term || job.title.toLowerCase().includes(term) || job.company.toLowerCase().includes(term);
+            const matchLoc = !loc || job.location === loc;
             
-            const matchesSector = !selectedSector || 
-                (selectedSector === 'Teknologi Informasi' && job.company.includes('Teknologi')) ||
-                (selectedSector === 'Manufaktur' && job.company.includes('Manufaktur')) ||
-                (selectedSector === 'Jasa Keuangan' && job.company.includes('Bank') || job.company.includes('Finansial')) ||
-                (selectedSector === 'Pendidikan' && job.company.includes('Pendidikan')) ||
-                (selectedSector === 'Kesehatan' && job.company.includes('Kesehatan'));
-            
-            const matchesLocation = !selectedLocation || job.location === selectedLocation;
-            
-            return matchesSearch && matchesSector && matchesLocation;
+            let matchSector = true;
+            if (sector) {
+                const keywords = {
+                    'Teknologi Informasi': ['developer', 'react', 'node', 'ui', 'tech'],
+                    'Jasa Keuangan': ['bank', 'finance', 'analyst'],
+                    'Manufaktur': ['manufaktur', 'pabrik'],
+                    'Pendidikan': ['guru', 'dosen'],
+                    'Kesehatan': ['dokter', 'medis']
+                };
+                const content = (job.title + ' ' + job.company + ' ' + job.description).toLowerCase();
+                const keys = keywords[sector] || [];
+                matchSector = keys.some(k => content.includes(k));
+            }
+            return matchSearch && matchLoc && matchSector;
         });
 
-        renderJobCards(filteredJobs);
+        currentPage = 1; 
+        renderDisplay();
     }
 
-    searchInput.addEventListener('keyup', filterJobs);
-    sectorFilter.addEventListener('change', filterJobs);
-    locationFilter.addEventListener('change', filterJobs);
-    searchButton.addEventListener('click', filterJobs);
+    if(searchInput) {
+        searchInput.addEventListener('keyup', filterJobs);
+        sectorFilter.addEventListener('change', filterJobs);
+        locationFilter.addEventListener('change', filterJobs);
+        searchButton.addEventListener('click', filterJobs);
+    }
 
-    viewAllJobs.addEventListener('click', function(e) {
-        e.preventDefault();
-        searchInput.value = '';
-        sectorFilter.value = '';
-        locationFilter.value = '';
-        renderJobCards(jobsData);
-    });
-});
+    function setupDropdown(btnId, listId, labelId, selectId) {
+        const btn = document.getElementById(btnId);
+        const list = document.getElementById(listId);
+        const label = document.getElementById(labelId);
+        const select = document.getElementById(selectId);
+        if(!btn || !list) return;
 
-document.addEventListener("DOMContentLoaded", function() {
-    const initTextLogic = () => {
-        const textElements = document.querySelectorAll('.hero-text, .section-title, .stats-title');
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                } else {
-                    entry.target.classList.remove('visible'); 
-                }
-            });
-        }, { threshold: 0.3 }); 
-
-        textElements.forEach(el => observer.observe(el));
-    };
-
-    const initHeroLogic = () => {
-        const heroSection = document.querySelector('.hero-images');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) heroSection.classList.add('visible');
-                else heroSection.classList.remove('visible');            });
-        }, { threshold: 0.3 });
-        if(heroSection) observer.observe(heroSection);
-    };
-
-    const initStatLogic = () => {
-        const stats = document.querySelectorAll('.stat-card');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                const el = entry.target;
-                if (entry.isIntersecting) {
-                    el.classList.remove('exit-up');
-                    el.classList.add('visible');
-                    setTimeout(() => { if(el.classList.contains('visible')) el.style.transitionDelay = '0s'; }, 1200);
-                } else {
-                    el.classList.remove('visible');
-                    if (entry.boundingClientRect.top < 0) el.classList.add('exit-up');
-                    else el.classList.remove('exit-up');
-                    el.style.transitionDelay = el.dataset.delay;
-                }
-            });
-        }, { threshold: 0.1 }); 
-
-        stats.forEach((el, index) => {
-            const delay = `${index * 200}ms`; 
-            el.dataset.delay = delay;
-            el.style.transitionDelay = delay;
-            observer.observe(el);
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            document.querySelectorAll('[id^="list"]').forEach(el => { if(el.id !== listId) el.classList.add('hidden'); });
+            list.classList.toggle('hidden');
         });
+
+        list.querySelectorAll('.option-item').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.stopPropagation();
+                label.textContent = item.textContent;
+                label.classList.add('text-gray-900', 'font-medium');
+                select.value = item.getAttribute('data-value');
+                select.dispatchEvent(new Event('change'));
+                list.classList.add('hidden');
+            });
+        });
+    }
+    setupDropdown('btnSektor', 'listSektor', 'labelSektor', 'sectorFilter');
+    setupDropdown('btnLokasi', 'listLokasi', 'labelLokasi', 'locationFilter');
+    document.addEventListener('click', () => {
+        document.querySelectorAll('[id^="list"]').forEach(el => el.classList.add('hidden'));
+    });
+
+    renderDisplay();
+
+    const initAnimations = () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    entry.target.classList.remove('exit-up');
+                } else {
+                    if(entry.boundingClientRect.top > 0) entry.target.classList.remove('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.hero-text, .section-title, .stats-title, .stat-card, .news-card, .hero-images, .animate-fade-in-up').forEach(el => observer.observe(el));
     };
+    initAnimations();
 
     const initNewsLogic = () => {
         const slider = document.getElementById('newsSlider');
-        const cards = slider.querySelectorAll('.news-card');
+        const cards = slider ? slider.querySelectorAll('.news-card') : [];
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                const el = entry.target;
-                if (entry.isIntersecting) {
-                    el.classList.add('visible');
-                    setTimeout(() => {
-                         if(el.classList.contains('visible')) el.style.transitionDelay = '0s'; }, 1200);
-                } else {
-                    if (entry.boundingClientRect.top > 0) {
-                        el.classList.remove('visible');
-                        el.style.transitionDelay = el.dataset.delay;
+        if (slider && cards.length > 0) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const el = entry.target;
+                    if (entry.isIntersecting) {
+                        el.classList.add('visible');
+                        setTimeout(() => { if(el.classList.contains('visible')) el.style.transitionDelay = '0s'; }, 1200);
+                    } else {
+                        if (entry.boundingClientRect.top > 0) {
+                            el.classList.remove('visible');
+                            el.style.transitionDelay = el.dataset.delay;
+                        }
                     }
-                }
+                });
+            }, { threshold: 0.15 });
+
+            cards.forEach((el, index) => {
+                let delayTime = (index < 3) ? index * 200 : 100;
+                el.dataset.delay = `${delayTime}ms`;
+                el.style.transitionDelay = `${delayTime}ms`;
+                observer.observe(el);
             });
-        }, { threshold: 0.15 });
 
-        cards.forEach((el, index) => {
-            let delayTime = (index < 3) ? index * 200 : 100;
-            el.dataset.delay = `${delayTime}ms`;
-            el.style.transitionDelay = `${delayTime}ms`;
-            observer.observe(el);
-        });
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const dotsContainer = document.getElementById('sliderDots');
+            
+            const moveSlider = (direction) => {
+                const cardWidth = cards[0].offsetWidth + 25;
+                if (direction === 'left') slider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+                else slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+            };
 
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const dotsContainer = document.getElementById('sliderDots');
-        let isAnimating = false;
+            if(prevBtn) prevBtn.addEventListener('click', () => moveSlider('left'));
+            if(nextBtn) nextBtn.addEventListener('click', () => moveSlider('right'));
 
-        const moveSlider = (direction) => {
-            if (isAnimating) return;
-            isAnimating = true;
-            const cardWidth = cards[0].offsetWidth + 25;
-            if (direction === 'left') slider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-            else slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
-            setTimeout(() => { isAnimating = false; }, 600);
-        };
-
-        if(prevBtn && nextBtn) {
-            prevBtn.addEventListener('click', () => moveSlider('left'));
-            nextBtn.addEventListener('click', () => moveSlider('right'));
+            const cardsPerView = 3; 
+            const totalDots = Math.max(0, cards.length - (cardsPerView - 1));
+            
+            if(dotsContainer) {
+                for (let i = 0; i < totalDots; i++) {
+                    const dot = document.createElement('div');
+                    dot.classList.add('dot');
+                    if (i === 0) dot.classList.add('active');
+                    dotsContainer.appendChild(dot);
+                }
+                const dots = document.querySelectorAll('.dot');
+                slider.addEventListener('scroll', () => {
+                    const cardWidth = cards[0].offsetWidth + 25;
+                    const scrollIndex = Math.round(slider.scrollLeft / cardWidth);
+                    dots.forEach(d => d.classList.remove('active'));
+                    if(dots[scrollIndex]) dots[scrollIndex].classList.add('active');
+                });
+            }
         }
-
-        const cardsPerView = 3; 
-        const totalDots = cards.length - (cardsPerView - 1); 
-        for (let i = 0; i < totalDots; i++) {
-            const dot = document.createElement('div');
-            dot.classList.add('dot');
-            if (i === 0) dot.classList.add('active');
-            dotsContainer.appendChild(dot);
-        }
-
-        const dots = document.querySelectorAll('.dot');
-        slider.addEventListener('scroll', () => {
-            const cardWidth = cards[0].offsetWidth + 25;
-            const scrollIndex = Math.round(slider.scrollLeft / cardWidth);
-            dots.forEach(d => d.classList.remove('active'));
-            if(dots[scrollIndex]) dots[scrollIndex].classList.add('active');
-        });
     };
-
-    initTextLogic(); 
-    initHeroLogic(); 
-    initStatLogic();
     initNewsLogic();
-
 });
