@@ -1,7 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const desktopMenu = document.getElementById('desktopMenu');
+    const searchInput = document.getElementById('searchInput');
+    const sectorFilter = document.getElementById('sectorFilter');
+    const locationFilter = document.getElementById('locationFilter');
+    const searchButton = document.getElementById('searchButton');
+    const viewAllJobsBtn = document.getElementById('viewAllJobs');
+    const jobListingsContainer = document.getElementById('jobListings');
 
+    // Variabel untuk data
+    let allJobsData = [];      // Menyimpan semua 50 data
+    let currentFilteredJobs = []; // Menyimpan hasil filter saat ini
+    let jobsToShow = 9;        // Jumlah awal yang ditampilkan
+    const jobsIncrement = 9;   // Jumlah tambahan saat klik 'Lihat Semua'
+
+    // === 2. Event Listeners UI (Menu, dll) ===
     if (mobileMenuBtn && desktopMenu) {
         mobileMenuBtn.addEventListener('click', () => {
             desktopMenu.classList.toggle('hidden');
@@ -10,9 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll('.nav-item').forEach(item => {
         item.addEventListener('click', function () {
-            document.querySelectorAll('.nav-item').forEach(el => {
-                el.classList.remove('nav-active');
-            });
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('nav-active'));
             this.classList.add('nav-active');
         });
     });
@@ -137,41 +148,63 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Kemampuan kepemimpinan dan komunikasi yang kuat"
             ],
             logo: "CGI"
+    // === 3. Fungsi Utama (Fetch & Render) ===
+
+    // Fungsi Fetch Data JSON
+    async function fetchJobs() {
+        try {
+            // Menampilkan loading state
+            jobListingsContainer.innerHTML = '<div class="col-span-full text-center py-8">Memuat data lowongan...</div>';
+            
+            // Fetch ke file JSON (Pastikan path sesuai struktur folder)
+            const response = await fetch('assete/data/jobs.json'); 
+            
+            if (!response.ok) throw new Error('Gagal mengambil data');
+            
+            allJobsData = await response.json();
+            currentFilteredJobs = allJobsData; // Awalnya filter berisi semua data
+            
+            // Render data awal
+            renderJobCards();
+        } catch (error) {
+            console.error('Error:', error);
+            jobListingsContainer.innerHTML = `
+                <div class="col-span-full text-center py-8 text-red-500">
+                    Gagal memuat data. Pastikan menjalankan via Localhost/Server.
+                </div>`;
         }
-    ];
+    }
 
     function renderJobCards(jobs) {
         const jobListingsContainer = document.getElementById('jobListings');
         jobListingsContainer.innerHTML = '';
 
-        if (jobs.length === 0) {
+        if (currentFilteredJobs.length === 0) {
             jobListingsContainer.innerHTML = `
                 <div class="col-span-full text-center py-8 text-gray-500">
                     Tidak ada lowongan yang sesuai dengan pencarian Anda.
                 </div>
             `;
+            viewAllJobsBtn.style.display = 'none'; // Sembunyikan tombol jika kosong
             return;
         }
 
-        jobs.forEach(job => {
+        // Ambil data sesuai limit (Pagination sederhana)
+        // Jika jobsToShow lebih besar dari total data, ambil semua
+        const dataToRender = currentFilteredJobs.slice(0, jobsToShow);
+
+        dataToRender.forEach(job => {
             const jobCard = document.createElement('div');
-            jobCard.className = 'job-card';
+            jobCard.className = 'job-card'; // Pastikan CSS job-card sudah ada
             
             let typeClass = '';
-            let typeText = '';
-            if (job.type === 'Full-time') {
-                typeClass = 'full-time';
-                typeText = 'Full-time';
-            } else if (job.type === 'Magang') {
-                typeClass = 'magang';
-                typeText = 'Magang';
-            } else if (job.type === 'Part-time') {
-                typeClass = 'part-time';
-                typeText = 'Part-time';
-            }
+            if (job.type === 'Full-time') typeClass = 'full-time';
+            else if (job.type === 'Magang') typeClass = 'magang';
+            else if (job.type === 'Part-time') typeClass = 'part-time';
+            else typeClass = 'contract'; // Default style jika ada tipe lain
 
             jobCard.innerHTML = `
-                <div class="job-type-badge ${typeClass}">${typeText}</div>
+                <div class="job-type-badge ${typeClass}">${job.type}</div>
                 <div class="job-header">
                     <div class="company-logo">${job.logo}</div>
                     <div>
@@ -200,13 +233,68 @@ document.addEventListener("DOMContentLoaded", () => {
                     </a>
                 </div>
             `;
-
             jobListingsContainer.appendChild(jobCard);
         });
+
+        // Logika Tombol "Lihat Semua" / "Load More"
+        // Jika data yang tampil < total data hasil filter, tampilkan tombol
+        if (dataToRender.length < currentFilteredJobs.length) {
+            viewAllJobsBtn.style.display = 'inline-block';
+            viewAllJobsBtn.textContent = 'Muat Lebih Banyak Lowongan ↓';
+        } else {
+            viewAllJobsBtn.style.display = 'none'; // Sembunyikan jika sudah tampil semua
+        }
     }
 
+    // === 4. Search & Filter Logic ===
+    function filterJobs() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        const selectedSector = sectorFilter.value;
+        const selectedLocation = locationFilter.value;
+
+        // Reset limit tampilan ke awal setiap kali filter berubah
+        jobsToShow = 9;
+
+        currentFilteredJobs = allJobsData.filter(job => {
+            const matchesSearch = !searchTerm || 
+                job.title.toLowerCase().includes(searchTerm) || 
+                job.company.toLowerCase().includes(searchTerm) ||
+                job.description.toLowerCase().includes(searchTerm);
+            
+            // Logika Filter Sektor (Proxy by Company Name untuk contoh)
+            // Di real app, sebaiknya ada properti "sector" di JSON
+            const matchesSector = !selectedSector || 
+                (selectedSector === 'Teknologi Informasi' && (job.skills.includes('React') || job.skills.includes('Python') || job.title.includes('Developer'))) ||
+                (selectedSector === 'Manufaktur' && job.company.toLowerCase().includes('manufaktur')) ||
+                (selectedSector === 'Jasa Keuangan' && (job.company.toLowerCase().includes('bank') || job.company.toLowerCase().includes('finansial'))) ||
+                (selectedSector === 'Pendidikan' && (job.title.includes('Guru') || job.company.includes('Course'))) ||
+                (selectedSector === 'Kesehatan' && (job.company.includes('RS') || job.company.includes('Klinik')));
+            
+            const matchesLocation = !selectedLocation || job.location === selectedLocation;
+            
+            return matchesSearch && matchesSector && matchesLocation;
+        });
+
+        renderJobCards();
+    }
+
+    // Event Listeners Filter
+    searchInput.addEventListener('keyup', filterJobs);
+    sectorFilter.addEventListener('change', filterJobs);
+    locationFilter.addEventListener('change', filterJobs);
+    searchButton.addEventListener('click', filterJobs);
+
+    // Event Listener Tombol "View All" (Sekarang jadi Load More)
+    viewAllJobsBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Tambahkan limit tampilan
+        jobsToShow += jobsIncrement;
+        renderJobCards();
+    });
+
+    // === 5. Modal Logic (Global Functions) ===
     window.showJobDetail = function(jobId) {
-        const job = jobsData.find(j => j.id === jobId);
+        const job = allJobsData.find(j => j.id === jobId);
         if (!job) return;
 
         document.getElementById('modalJobTitle').textContent = job.title;
@@ -217,24 +305,23 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById('modalDetails').textContent = job.details;
         
         const jobTypeBadge = document.getElementById('modalJobType');
-        if (job.type === 'Full-time') {
-            jobTypeBadge.textContent = 'Full-time';
-            jobTypeBadge.className = 'inline-block px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800';
-        } else if (job.type === 'Magang') {
-            jobTypeBadge.textContent = 'Magang';
-            jobTypeBadge.className = 'inline-block px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800';
-        } else if (job.type === 'Part-time') {
-            jobTypeBadge.textContent = 'Part-time';
-            jobTypeBadge.className = 'inline-block px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800';
-        }
+        jobTypeBadge.textContent = job.type;
+        // Reset class
+        jobTypeBadge.className = 'inline-block px-3 py-1 rounded-full text-sm font-medium';
+        
+        if (job.type === 'Full-time') jobTypeBadge.classList.add('bg-blue-100', 'text-blue-800');
+        else if (job.type === 'Magang') jobTypeBadge.classList.add('bg-green-100', 'text-green-800');
+        else jobTypeBadge.classList.add('bg-yellow-100', 'text-yellow-800');
 
         const requirementsList = document.getElementById('modalRequirements');
         requirementsList.innerHTML = '';
-        job.requirements.forEach(req => {
-            const li = document.createElement('li');
-            li.textContent = req;
-            requirementsList.appendChild(li);
-        });
+        if(job.requirements) {
+            job.requirements.forEach(req => {
+                const li = document.createElement('li');
+                li.textContent = req;
+                requirementsList.appendChild(li);
+            });
+        }
 
         document.getElementById('jobDetailModal').classList.remove('hidden');
     };
