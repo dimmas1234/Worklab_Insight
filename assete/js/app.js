@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Toggle mobile menu
+
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const desktopMenu = document.getElementById('desktopMenu');
 
@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Active menu effect
     document.querySelectorAll('.nav-item').forEach(item => {
         item.addEventListener('click', function () {
             document.querySelectorAll('.nav-item').forEach(el => {
@@ -19,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Sample job data with detailed information
     const jobsData = [
         {
             id: 1,
@@ -143,7 +141,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     ];
 
-    // Function to render job cards
     function renderJobCards(jobs) {
         const jobListingsContainer = document.getElementById('jobListings');
         jobListingsContainer.innerHTML = '';
@@ -161,7 +158,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const jobCard = document.createElement('div');
             jobCard.className = 'job-card';
             
-            // Determine job type badge color and text
             let typeClass = '';
             let typeText = '';
             if (job.type === 'Full-time') {
@@ -210,12 +206,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Function to show job detail modal
     window.showJobDetail = function(jobId) {
         const job = jobsData.find(j => j.id === jobId);
         if (!job) return;
 
-        // Set modal content
         document.getElementById('modalJobTitle').textContent = job.title;
         document.getElementById('modalCompanyName').textContent = job.company;
         document.getElementById('modalLocation').querySelector('span').textContent = job.location;
@@ -223,7 +217,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById('modalDescription').textContent = job.description;
         document.getElementById('modalDetails').textContent = job.details;
         
-        // Set job type badge
         const jobTypeBadge = document.getElementById('modalJobType');
         if (job.type === 'Full-time') {
             jobTypeBadge.textContent = 'Full-time';
@@ -236,7 +229,6 @@ document.addEventListener("DOMContentLoaded", () => {
             jobTypeBadge.className = 'inline-block px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800';
         }
 
-        // Set requirements
         const requirementsList = document.getElementById('modalRequirements');
         requirementsList.innerHTML = '';
         job.requirements.forEach(req => {
@@ -245,26 +237,21 @@ document.addEventListener("DOMContentLoaded", () => {
             requirementsList.appendChild(li);
         });
 
-        // Show modal
         document.getElementById('jobDetailModal').classList.remove('hidden');
     };
 
-    // Close modal
     document.getElementById('closeModal').addEventListener('click', () => {
         document.getElementById('jobDetailModal').classList.add('hidden');
     });
 
-    // Close modal when clicking outside
     document.getElementById('jobDetailModal').addEventListener('click', (e) => {
         if (e.target.id === 'jobDetailModal') {
             document.getElementById('jobDetailModal').classList.add('hidden');
         }
     });
 
-    // Initialize with all jobs
     renderJobCards(jobsData);
 
-    // Search functionality
     const searchInput = document.getElementById('searchInput');
     const sectorFilter = document.getElementById('sectorFilter');
     const locationFilter = document.getElementById('locationFilter');
@@ -277,14 +264,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const selectedLocation = locationFilter.value;
 
         let filteredJobs = jobsData.filter(job => {
-            // Filter by search term
             const matchesSearch = !searchTerm || 
                 job.title.toLowerCase().includes(searchTerm) || 
                 job.company.toLowerCase().includes(searchTerm) ||
                 job.description.toLowerCase().includes(searchTerm) ||
                 job.details.toLowerCase().includes(searchTerm);
             
-            // Filter by sector (for this example, we'll use the company name as proxy for sector)
             const matchesSector = !selectedSector || 
                 (selectedSector === 'Teknologi Informasi' && job.company.includes('Teknologi')) ||
                 (selectedSector === 'Manufaktur' && job.company.includes('Manufaktur')) ||
@@ -292,7 +277,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 (selectedSector === 'Pendidikan' && job.company.includes('Pendidikan')) ||
                 (selectedSector === 'Kesehatan' && job.company.includes('Kesehatan'));
             
-            // Filter by location
             const matchesLocation = !selectedLocation || job.location === selectedLocation;
             
             return matchesSearch && matchesSector && matchesLocation;
@@ -301,13 +285,11 @@ document.addEventListener("DOMContentLoaded", () => {
         renderJobCards(filteredJobs);
     }
 
-    // Add event listeners
     searchInput.addEventListener('keyup', filterJobs);
     sectorFilter.addEventListener('change', filterJobs);
     locationFilter.addEventListener('change', filterJobs);
     searchButton.addEventListener('click', filterJobs);
 
-    // View all jobs button
     viewAllJobs.addEventListener('click', function(e) {
         e.preventDefault();
         searchInput.value = '';
@@ -315,4 +297,144 @@ document.addEventListener("DOMContentLoaded", () => {
         locationFilter.value = '';
         renderJobCards(jobsData);
     });
+
+    const initTextLogic = () => {
+        const textElements = document.querySelectorAll('.hero-text, .section-title, .stats-title');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible'); 
+                }
+            });
+        }, { threshold: 0.3 }); 
+
+        textElements.forEach(el => observer.observe(el));
+    };
+
+    const initHeroLogic = () => {
+        const heroSection = document.querySelector('.hero-images');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    heroSection.classList.add('visible');
+                } else {
+                    heroSection.classList.remove('visible');
+                }
+            });
+        }, { threshold: 0.3 }); 
+
+        if (heroSection) {
+            observer.observe(heroSection);
+        }
+    };
+
+    const initStatLogic = () => {
+        const stats = document.querySelectorAll('.stat-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const el = entry.target;
+                if (entry.isIntersecting) {
+                    el.classList.remove('exit-up');
+                    el.classList.add('visible');
+                    setTimeout(() => { 
+                        if(el.classList.contains('visible')) el.style.transitionDelay = '0s'; 
+                    }, 1200);
+                } else {
+                    el.classList.remove('visible');
+                    if (entry.boundingClientRect.top < 0) {
+                        el.classList.add('exit-up');
+                    } else {
+                        el.classList.remove('exit-up');
+                    }
+                    el.style.transitionDelay = el.dataset.delay;
+                }
+            });
+        }, { threshold: 0.1 }); 
+
+        stats.forEach((el, index) => {
+            const delay = `${index * 200}ms`; 
+            el.dataset.delay = delay;
+            el.style.transitionDelay = delay;
+            observer.observe(el);
+        });
+    };
+
+    const initNewsLogic = () => {
+        const slider = document.getElementById('newsSlider');
+        const cards = slider.querySelectorAll('.news-card');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const el = entry.target;
+                if (entry.isIntersecting) {
+                    el.classList.add('visible');
+                    setTimeout(() => { 
+                        if(el.classList.contains('visible')) el.style.transitionDelay = '0s'; 
+                    }, 1200);
+                } else {
+                    if (entry.boundingClientRect.top > 0) {
+                        el.classList.remove('visible');
+                        el.style.transitionDelay = el.dataset.delay;
+                    }
+                }
+            });
+        }, { threshold: 0.15 });
+
+        cards.forEach((el, index) => {
+            let delayTime = (index < 3) ? index * 200 : 100;
+            el.dataset.delay = `${delayTime}ms`;
+            el.style.transitionDelay = `${delayTime}ms`;
+            observer.observe(el);
+        });
+
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dotsContainer = document.getElementById('sliderDots');
+        let isAnimating = false;
+
+        const moveSlider = (direction) => {
+            if (isAnimating) return;
+            isAnimating = true;
+            const cardWidth = cards[0].offsetWidth + 25;
+            
+            if (direction === 'left') {
+                slider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+            } else {
+                slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+            }
+
+            setTimeout(() => { isAnimating = false; }, 600);
+        };
+
+        if(prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => moveSlider('left'));
+            nextBtn.addEventListener('click', () => moveSlider('right'));
+        }
+
+        const cardsPerView = 3; 
+        const totalDots = cards.length - (cardsPerView - 1); 
+
+        for (let i = 0; i < totalDots; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dotsContainer.appendChild(dot);
+        }
+
+        const dots = document.querySelectorAll('.dot');
+        slider.addEventListener('scroll', () => {
+            const cardWidth = cards[0].offsetWidth + 25;
+            const scrollIndex = Math.round(slider.scrollLeft / cardWidth);
+            
+            dots.forEach(d => d.classList.remove('active'));
+            if(dots[scrollIndex]) dots[scrollIndex].classList.add('active');
+        });
+    };
+
+    initTextLogic();
+    initHeroLogic();
+    initStatLogic();
+    initNewsLogic();
 });
