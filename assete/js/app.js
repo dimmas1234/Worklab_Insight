@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const desktopMenu = document.getElementById('desktopMenu');
 
@@ -297,15 +296,17 @@ document.addEventListener("DOMContentLoaded", () => {
         locationFilter.value = '';
         renderJobCards(jobsData);
     });
+});
 
+document.addEventListener("DOMContentLoaded", function() {
     const initTextLogic = () => {
-        const textElements = document.querySelectorAll('.hero-text, .section-title, .stats-title');
+        const textElements = document.querySelectorAll('.hero-text, .section-title');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                 } else {
-                    entry.target.classList.remove('visible'); 
+                    entry.target.classList.remove('visible');
                 }
             });
         }, { threshold: 0.3 }); 
@@ -317,17 +318,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const heroSection = document.querySelector('.hero-images');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    heroSection.classList.add('visible');
-                } else {
-                    heroSection.classList.remove('visible');
-                }
-            });
-        }, { threshold: 0.3 }); 
-
-        if (heroSection) {
-            observer.observe(heroSection);
-        }
+                if (entry.isIntersecting) heroSection.classList.add('visible');
+                else heroSection.classList.remove('visible');            });
+        }, { threshold: 0.3 });
+        if(heroSection) observer.observe(heroSection);
     };
 
     const initStatLogic = () => {
@@ -338,16 +332,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (entry.isIntersecting) {
                     el.classList.remove('exit-up');
                     el.classList.add('visible');
-                    setTimeout(() => { 
-                        if(el.classList.contains('visible')) el.style.transitionDelay = '0s'; 
-                    }, 1200);
+                    setTimeout(() => { if(el.classList.contains('visible')) el.style.transitionDelay = '0s'; }, 1200);
                 } else {
                     el.classList.remove('visible');
-                    if (entry.boundingClientRect.top < 0) {
-                        el.classList.add('exit-up');
-                    } else {
-                        el.classList.remove('exit-up');
-                    }
+                    if (entry.boundingClientRect.top < 0) el.classList.add('exit-up');
+                    else el.classList.remove('exit-up');
                     el.style.transitionDelay = el.dataset.delay;
                 }
             });
@@ -370,9 +359,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 const el = entry.target;
                 if (entry.isIntersecting) {
                     el.classList.add('visible');
-                    setTimeout(() => { 
-                        if(el.classList.contains('visible')) el.style.transitionDelay = '0s'; 
-                    }, 1200);
+                    setTimeout(() => {
+                         if(el.classList.contains('visible')) el.style.transitionDelay = '0s'; }, 1200);
                 } else {
                     if (entry.boundingClientRect.top > 0) {
                         el.classList.remove('visible');
@@ -398,13 +386,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (isAnimating) return;
             isAnimating = true;
             const cardWidth = cards[0].offsetWidth + 25;
-            
-            if (direction === 'left') {
-                slider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-            } else {
-                slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
-            }
-
+            if (direction === 'left') slider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+            else slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
             setTimeout(() => { isAnimating = false; }, 600);
         };
 
@@ -415,7 +398,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const cardsPerView = 3; 
         const totalDots = cards.length - (cardsPerView - 1); 
-
         for (let i = 0; i < totalDots; i++) {
             const dot = document.createElement('div');
             dot.classList.add('dot');
@@ -427,14 +409,14 @@ document.addEventListener("DOMContentLoaded", () => {
         slider.addEventListener('scroll', () => {
             const cardWidth = cards[0].offsetWidth + 25;
             const scrollIndex = Math.round(slider.scrollLeft / cardWidth);
-            
             dots.forEach(d => d.classList.remove('active'));
             if(dots[scrollIndex]) dots[scrollIndex].classList.add('active');
         });
     };
 
-    initTextLogic();
-    initHeroLogic();
+    initTextLogic(); 
+    initHeroLogic(); 
     initStatLogic();
     initNewsLogic();
+
 });
