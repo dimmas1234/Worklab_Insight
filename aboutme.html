@@ -16,7 +16,7 @@
             <img src="/assete/img/logo.png" alt="Logo">
             <span>WorkLab Insight</span>
         </div>
-        <ul class="nav-links">
+        <ul class="nav-links hidden md:flex" id="desktopMenu">
             <a href="dashboard.html" class="nav-item">Home</a>
             <a href="analisis.html" class="nav-item">National Employment Data</a>
             <a href="lowongan.html" class="nav-item">Job Portal</a>
@@ -26,6 +26,9 @@
             <button id="themeToggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition text-gray-600 dark:text-gray-200">
                 <i class="fas fa-moon text-xl" id="themeIcon"></i>
             </button>
+            <div class="mobile-menu md:hidden text-primary-blue text-2xl cursor-pointer" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </nav>
 
@@ -110,45 +113,18 @@
         </div>
     </main>
 
-    <footer class="footer-bg mt-12">
-        <div class="container mx-auto px-4 py-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="footer-section">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-indigo-600 rounded-full p-2 mr-3">
-                            <i class="fas fa-briefcase text-white text-lg"></i>
-                        </div>
-                        <h3 class="text-xl font-bold">WorkLab Insight</h3>
-                    </div>
-                    <p class="text-gray-300">Mendukung SDG 8 melalui data ketenagakerjaan dan analisis ekonomi.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Navigasi</h3>
-                    <ul>
-                        <li><a href="dashboard.html" class="footer-link">Dashboard</a></li>
-                        <li><a href="analisis.html" class="footer-link">Analisis Ketenagakerjaan</a></li>
-                        <li><a href="lowongan.html" class="footer-link">Job Portal</a></li>
-                        <li><a href="economicgrowth.html" class="footer-link">Analisis Ekonomi</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Informasi</h3>
-                    <ul>
-                        <li><a href="aboutme.html" class="footer-link">About Me</a></li>
-                        <li><a href="#" class="footer-link">Privasi</a></li>
-                        <li><a href="#" class="footer-link">Kontak</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Ikuti Kami</h3>
-                    <div class="flex space-x-4">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
+  <footer class="mt-auto">
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="aboutme.html">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
             </div>
+            <div class="social-icons">
+                <span>🐦</span> <span>🔗</span> <span>fb</span>
+            </div>
+            <p class="copyright">© 2024 Indonesia Employment Watch. All Rights Reserved.</p>
         </div>
     </footer>
 
