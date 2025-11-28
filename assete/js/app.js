@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     let jobsData = [];
+    let selectedJob = null;
 
     const itemsPerPage = 9;
     let currentPage = 1;
@@ -90,8 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                 </div>
                 <div class="text-sm text-gray-500 space-y-2 mb-4">
-                    <div class="flex items-center gap-2"><i class="fas fa-map-marker-alt w-4"></i> ${job.location}</div>
-                    <div class="flex items-center gap-2"><i class="far fa-clock w-4"></i> ${job.posted}</div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-map-marker-alt w-4"></i> ${job.location}</div>
+                    <div class="flex items-center gap-2"><i class="fa-regular fa-clock w-4"></i> ${job.posted}</div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-4">
                     ${job.skills.map(skill => `<span class="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-md border border-gray-100">${skill}</span>`).join('')}
@@ -99,8 +100,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
                     <span class="font-bold text-gray-800 text-sm">${job.salary}</span>
                     <div class="flex gap-2">
-                        <button class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-200 transition btn-detail flex items-center gap-2" data-id="${job.id}"><i class="fas fa-eye"></i> Lihat Detail</button>
-                        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition btn-apply flex items-center gap-2" data-id="${job.id}"><i class="fas fa-paper-plane"></i> Lamar</button>
+                        <button class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-200 transition btn-detail flex items-center gap-2" data-id="${job.id}"><i class="fa-solid fa-eye"></i> Lihat Detail</button>
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition btn-apply flex items-center gap-2" data-id="${job.id}"><i class="fa-solid fa-paper-plane"></i> Lamar</button>
                     </div>
                 </div>
             `;
@@ -230,11 +231,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 reqEl.appendChild(li);
             });
         }
+        selectedJob = job;
         modal.classList.remove('hidden');
     }
 
     function openApply(job) {
-        alert('Lamar ' + job.title);
+        const applyModal = document.getElementById('applyModal');
+        const title = document.getElementById('applyModalTitle');
+        if(title) title.textContent = `Form Lamaran - ${job?.title || ''}`;
+        if(applyModal) applyModal.classList.remove('hidden');
     }
 
     const closeBtn = document.getElementById('closeModal');
@@ -260,6 +265,52 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     loadJobs();
+
+    const modalApplyBtn = document.getElementById('modalApplyButton');
+    if(modalApplyBtn) modalApplyBtn.addEventListener('click', () => {
+        if(selectedJob) openApply(selectedJob);
+    });
+
+    const detailBackBtn = document.getElementById('detailBackBtn');
+    if(detailBackBtn) detailBackBtn.addEventListener('click', () => {
+        const modal = document.getElementById('jobDetailModal');
+        if(modal) modal.classList.add('hidden');
+    });
+
+    const detailBackBottomBtn = document.getElementById('detailBackBottomBtn');
+    if(detailBackBottomBtn) detailBackBottomBtn.addEventListener('click', () => {
+        const modal = document.getElementById('jobDetailModal');
+        if(modal) modal.classList.add('hidden');
+    });
+
+    const closeApply = document.getElementById('closeApplyModal');
+    if(closeApply) closeApply.addEventListener('click', () => {
+        const m = document.getElementById('applyModal');
+        if(m) m.classList.add('hidden');
+    });
+    const applyCancelBtn = document.getElementById('applyCancelBtn');
+    if(applyCancelBtn) applyCancelBtn.addEventListener('click', () => {
+        const m = document.getElementById('applyModal');
+        if(m) m.classList.add('hidden');
+    });
+    const applySendBtn = document.getElementById('applySendBtn');
+    if(applySendBtn) applySendBtn.addEventListener('click', () => {
+        const name = document.getElementById('applyName')?.value.trim();
+        const wa = document.getElementById('applyWhatsapp')?.value.trim();
+        const email = document.getElementById('applyEmail')?.value.trim();
+        const address = document.getElementById('applyAddress')?.value.trim();
+        if(!name || !wa || !email || !address) {
+            alert('Mohon lengkapi Nama, WhatsApp, Email, dan Alamat.');
+            return;
+        }
+        alert('Lamaran terkirim. Terima kasih!');
+        const m = document.getElementById('applyModal');
+        if(m) m.classList.add('hidden');
+    });
+    const applyOverlay = document.getElementById('applyModal');
+    if(applyOverlay) applyOverlay.addEventListener('click', (e) => {
+        if(e.target.id === 'applyModal') applyOverlay.classList.add('hidden');
+    });
 
     const initAnimations = () => {
         const observer = new IntersectionObserver((entries) => {

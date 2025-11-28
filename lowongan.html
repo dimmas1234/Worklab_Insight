@@ -6,6 +6,7 @@
     <title>Lowongan Kerja - Dashboard Ketenagakerjaan Nasional</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assete/css/style.css">
 </head>
@@ -29,7 +30,7 @@
         </ul>
 
         <div class="mobile-menu md:hidden text-primary-blue text-2xl cursor-pointer" id="mobileMenuBtn">
-            <i class="fas fa-bars"></i>
+            <i class="fa-solid fa-bars"></i>
         </div>
 
         <div class="flex items-center gap-4">
@@ -88,7 +89,7 @@
             </div>
 
             <button id="searchButton" class="bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 transition shadow-md hover:shadow-lg flex items-center justify-center gap-2 font-medium w-full md:w-auto">
-                <i class="fas fa-search"></i> Cari
+                <i class="fa-solid fa-search"></i> Cari
             </button>
 
         </div>
@@ -112,9 +113,11 @@
         
         <div class="p-6">
             <div class="flex justify-between items-start mb-4">
-                <h3 id="modalJobTitle" class="text-lg font-bold text-gray-800 leading-tight"></h3>
+                <div class="flex items-center gap-3">
+                    <h3 id="modalJobTitle" class="text-lg font-bold text-gray-800 leading-tight"></h3>
+                </div>
                 <button id="closeModal" class="text-gray-400 hover:text-red-500 transition-colors p-1">
-                    <i class="fas fa-times text-lg"></i>
+                    <i class="fa-solid fa-xmark text-lg"></i>
                 </button>
             </div>
 
@@ -123,7 +126,7 @@
                 <div>
                     <div id="modalCompanyName" class="font-bold text-gray-800 text-sm"></div>
                     <div id="modalLocation" class="text-xs text-gray-500 flex items-center mt-0.5">
-                        <i class="fas fa-map-marker-alt mr-1"></i>
+                        <i class="fa-solid fa-map-marker-alt mr-1"></i>
                         <span></span>
                     </div>
                 </div>
@@ -148,11 +151,64 @@
                 </div>
             </div>
 
-            <div class="mt-8 pt-4 border-t border-gray-100 flex justify-end">
-                <button id="modalApplyButton" class="bg-blue-600 text-white text-sm px-6 py-2.5 rounded-lg hover:bg-blue-700 transition font-medium shadow-lg shadow-blue-500/20 w-full sm:w-auto">
-                    <i class="fas fa-paper-plane mr-2"></i> Lamar Sekarang
+            <div class="mt-8 pt-4 border-t border-gray-100 flex justify-between items-center gap-3">
+                <button id="detailBackBottomBtn" class="bg-gray-100 text-gray-800 text-sm px-6 py-2.5 rounded-lg hover:bg-gray-200 transition font-medium flex items-center gap-2">
+                    <i class="fa-solid fa-arrow-left"></i> Kembali
+                </button>
+                <button id="modalApplyButton" class="bg-blue-600 text-white text-sm px-6 py-2.5 rounded-lg hover:bg-blue-700 transition font-medium shadow-lg shadow-blue-500/20">
+                    <i class="fa-solid fa-paper-plane mr-2"></i> Lamar Sekarang
                 </button>
             </div>
+        </div>
+    </div>
+</div>
+
+<!-- Apply Modal -->
+<div id="applyModal" class="fixed inset-0 bg-black bg-opacity-60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-all duration-300">
+    <div class="bg-white rounded-xl max-w-xl w-full max-h-[85vh] overflow-y-auto shadow-2xl modal-animate no-scrollbar">
+        <div class="p-6">
+            <div class="flex justify-between items-start mb-4">
+                <h3 id="applyModalTitle" class="text-lg font-bold text-gray-800 leading-tight">Form Lamaran</h3>
+                <button id="closeApplyModal" class="text-gray-400 hover:text-red-500 transition-colors p-1">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <form id="applyForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                    <input id="applyName" type="text" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Nama sesuai KTP">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Nomor WhatsApp</label>
+                    <input id="applyWhatsapp" type="tel" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="08xxxxxxxxxx">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input id="applyEmail" type="email" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="nama@email.com">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Alamat</label>
+                    <input id="applyAddress" type="text" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Alamat domisili">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Alasan ingin melamar (opsional)</label>
+                    <textarea id="applyReason" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" rows="3" placeholder="Motivasi singkat"></textarea>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Upload CV</label>
+                    <input id="applyCv" type="file" accept=".pdf,.doc,.docx" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none">
+                    <p class="text-xs text-gray-500 mt-1">Format: PDF/DOC/DOCX</p>
+                </div>
+
+                <div class="pt-4 border-t border-gray-100 flex justify-between items-center gap-3">
+                    <button id="applyCancelBtn" type="button" class="bg-gray-100 text-gray-800 px-6 py-2.5 rounded-lg hover:bg-gray-200 transition font-medium flex items-center gap-2">
+                        <i class="fa-solid fa-xmark"></i> Batal
+                    </button>
+                    <button id="applySendBtn" type="button" class="bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 transition font-medium flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Kirim
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
