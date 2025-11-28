@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body>
+<body class="bg-gray-50">
     <nav class="navbar animate-fade-down">
         <div class="logo">
             <img src="/assete/img/logo.png" alt="Logo">
@@ -80,8 +80,7 @@
             </a>
         </ul>
         
-        <div class="flex items-center gap-4">
-        
+        <div class="flex items-center gap-4">    
         <button id="themeToggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition text-gray-600 dark:text-gray-200">
             <i class="fas fa-moon text-xl" id="themeIcon"></i>
         </button>
@@ -89,7 +88,9 @@
     </div>
     </nav>
 
-    <div class="main-wrapper">
+    <main class="container mx-auto px-4 relative z-10">
+        <div class="max-w-6xl mx-auto">
+        <div class="main-wrapper">
         <div class="container">
             <header class="page-header">
                 <h1>Economic Growth Analysis</h1>
@@ -193,8 +194,11 @@
                 </aside> 
             </main>
         </div>
+        </div>
     </div>
+    </main>
 
-    <script src="assete/js/test.js"></script> 
+    <script src="assete/js/test.js"></script>
+    <script src="assete/js/app.js"></script>
 </body>
-</html> 
+</html>
