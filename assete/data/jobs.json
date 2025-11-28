@@ -11,7 +11,9 @@
     "description": "Mengembangkan aplikasi web menggunakan teknologi modern.",
     "details": "Bertanggung jawab untuk mengembangkan antarmuka pengguna yang responsif.",
     "requirements": ["Min 1 tahun pengalaman", "Menguasai React.js", "Paham UI/UX"],
-    "logo": "TM"
+    "logo": "TM",
+    "sector": "Digital & TIK",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 2,
@@ -25,7 +27,9 @@
     "description": "Mengelola strategi pemasaran digital dan branding",
     "details": "Membantu merancang kampanye pemasaran digital.",
     "requirements": ["Mahasiswa semester 5+", "Paham SEO", "Kreatif"],
-    "logo": "ID"
+    "logo": "ID",
+    "sector": "Digital & TIK",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 3,
@@ -39,7 +43,9 @@
     "description": "Menganalisis data untuk insight bisnis.",
     "details": "Mengumpulkan dan membersihkan data dari berbagai sumber.",
     "requirements": ["S1 Statistik/Matematika", "Menguasai SQL", "Analitis kuat"],
-    "logo": "BFI"
+    "logo": "BFI",
+    "sector": "Keuangan",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 4,
@@ -53,7 +59,9 @@
     "description": "Membangun server dan API yang scalable.",
     "details": "Merancang arsitektur backend yang aman.",
     "requirements": ["Pengalaman 2 tahun", "Menguasai Node.js", "Paham REST API"],
-    "logo": "SDI"
+    "logo": "SDI",
+    "sector": "Digital & TIK",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 5,
@@ -67,7 +75,9 @@
     "description": "Merancang pengalaman pengguna yang intuitif.",
     "details": "Melakukan riset pengguna dan membuat wireframe.",
     "requirements": ["Portofolio UX", "Menguasai Figma", "Komunikatif"],
-    "logo": "DSC"
+    "logo": "DSC",
+    "sector": "Digital & TIK",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 6,
@@ -81,7 +91,9 @@
     "description": "Mengelola proyek IT dari awal hingga akhir.",
     "details": "Memastikan proyek berjalan sesuai timeline.",
     "requirements": ["Sertifikasi PMP", "Pengalaman 3 tahun", "Leadership"],
-    "logo": "CGI"
+    "logo": "CGI",
+    "sector": "Digital & TIK",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 7,
@@ -95,7 +107,9 @@
     "description": "Membuat aplikasi mobile Android & iOS.",
     "details": "Mengembangkan fitur baru untuk aplikasi e-commerce.",
     "requirements": ["Paham State Management", "Pengalaman rilis di Playstore"],
-    "logo": "PAN"
+    "logo": "PAN",
+    "sector": "Digital & TIK",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 8,
@@ -109,7 +123,9 @@
     "description": "Menulis artikel blog dan caption sosmed.",
     "details": "Riset topik trending dan menulis konten menarik.",
     "requirements": ["Suka menulis", "Teliti Ejaan", "Kreatif"],
-    "logo": "MKJ"
+    "logo": "MKJ",
+    "sector": "Digital & TIK",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 9,
@@ -123,7 +139,9 @@
     "description": "Mengurus administrasi karyawan dan rekrutmen.",
     "details": "Menangani BPJS, absensi, dan proses onboarding.",
     "requirements": ["S1 Psikologi/Hukum", "Paham UU Tenaga Kerja"],
-    "logo": "PMG"
+    "logo": "PMG",
+    "sector": "Manufaktur",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 10,
@@ -137,7 +155,9 @@
     "description": "Mengelola infrastruktur cloud dan deployment.",
     "details": "Otomatisasi proses deployment dan monitoring server.",
     "requirements": ["Pengalaman Linux", "Sertifikasi AWS", "Scripting"],
-    "logo": "UT"
+    "logo": "UT",
+    "sector": "Digital & TIK",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 11,
@@ -151,7 +171,9 @@
     "description": "Mencari klien baru dan menjaga hubungan.",
     "details": "Melakukan presentasi produk ke calon klien korporat.",
     "requirements": ["Target oriented", "Punya kendaraan", "SIM C/A"],
-    "logo": "POJ"
+    "logo": "POJ",
+    "sector": "Manufaktur",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 12,
@@ -165,7 +187,9 @@
     "description": "Membuat visual untuk kampanye iklan.",
     "details": "Desain banner, logo, dan materi promosi.",
     "requirements": ["Artististik", "Portofolio visual", "Deadline oriented"],
-    "logo": "AWW"
+    "logo": "AWW",
+    "sector": "Digital & TIK",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 13,
@@ -179,7 +203,9 @@
     "description": "Pengembangan sistem core banking.",
     "details": "Maintenance dan upgrade fitur perbankan.",
     "requirements": ["Kuat di OOP", "Paham Microservices", "Pengalaman Java"],
-    "logo": "BMS"
+    "logo": "BMS",
+    "sector": "Keuangan",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 14,
@@ -193,7 +219,9 @@
     "description": "Mengerjakan laporan keuangan harian.",
     "details": "Input transaksi, petty cash, dan invoice.",
     "requirements": ["D3/S1 Akuntansi", "Teliti", "Jujur"],
-    "logo": "CSA"
+    "logo": "CSA",
+    "sector": "Keuangan",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 15,
@@ -207,7 +235,9 @@
     "description": "Memastikan kualitas aplikasi bebas bug.",
     "details": "Membuat test case dan menjalankan automation test.",
     "requirements": ["Detail oriented", "Paham SDLC", "Bisa coding basic"],
-    "logo": "SE"
+    "logo": "SE",
+    "sector": "Digital & TIK",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 16,
@@ -221,7 +251,9 @@
     "description": "Mengatur keluar masuk barang di gudang.",
     "details": "Loading unloading barang dan stock opname.",
     "requirements": ["SMA/SMK", "Sehat jasmani", "Bisa kerja shift"],
-    "logo": "LC"
+    "logo": "LC",
+    "sector": "Ritel",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 17,
@@ -235,7 +267,9 @@
     "description": "Melayani keluhan pelanggan via chat/telp.",
     "details": "Menjawab pertanyaan customer dengan ramah.",
     "requirements": ["Sabar", "Komunikatif", "Bisa mengetik cepat"],
-    "logo": "ECT"
+    "logo": "ECT",
+    "sector": "Ritel",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 18,
@@ -249,7 +283,9 @@
     "description": "Mendokumentasikan acara pernikahan.",
     "details": "Shooting dan editing video highlight.",
     "requirements": ["Punya alat sendiri", "Portofolio video", "Kreatif"],
-    "logo": "WO"
+    "logo": "WO",
+    "sector": "Digital & TIK",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 19,
@@ -263,7 +299,9 @@
     "description": "Bertanggung jawab atas pengelolaan obat.",
     "details": "Meracik obat sesuai resep dokter.",
     "requirements": ["S1 Farmasi + Apt", "Punya STRA aktif"],
-    "logo": "KST"
+    "logo": "KST",
+    "sector": "Kesehatan",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 20,
@@ -277,7 +315,9 @@
     "description": "Mengajar kelas bahasa inggris dewasa.",
     "details": "Menyiapkan materi ajar yang interaktif.",
     "requirements": ["TOEFL > 550", "Penyabar", "Ceria"],
-    "logo": "ECC"
+    "logo": "ECC",
+    "sector": "Pendidikan",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 21,
@@ -291,7 +331,9 @@
     "description": "Menjaga keamanan sistem perbankan.",
     "details": "Monitoring serangan siber dan vulnerability assessment.",
     "requirements": ["Sertifikasi CEH/CISSP", "Pengalaman Security"],
-    "logo": "BN"
+    "logo": "BN",
+    "sector": "Keuangan",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 22,
@@ -305,7 +347,9 @@
     "description": "Meracik kopi dan melayani pelanggan.",
     "details": "Menjaga kebersihan area bar.",
     "requirements": ["Minat pada kopi", "Ramah", "Jujur"],
-    "logo": "KS"
+    "logo": "KS",
+    "sector": "Ritel",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 23,
@@ -319,7 +363,9 @@
     "description": "Mengurus dokumen legalitas perusahaan.",
     "details": "Review perjanjian kerjasama dan perizinan proyek.",
     "requirements": ["S1 Hukum", "Pengalaman di Notaris/Lawfirm"],
-    "logo": "PPI"
+    "logo": "PPI",
+    "sector": "Lainnya",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 24,
@@ -333,7 +379,9 @@
     "description": "Maintenance jaringan internet klien.",
     "details": "Troubleshooting masalah koneksi jaringan.",
     "requirements": ["Sertifikat CCNA/MTCNA", "Siap mobile"],
-    "logo": "IC"
+    "logo": "IC",
+    "sector": "Digital & TIK",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 25,
@@ -347,7 +395,9 @@
     "description": "Menyambut tamu hotel check-in/out.",
     "details": "Memberikan informasi fasilitas hotel.",
     "requirements": ["Penampilan menarik", "Fluent English"],
-    "logo": "HBL"
+    "logo": "HBL",
+    "sector": "Lainnya",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 26,
@@ -361,7 +411,9 @@
     "description": "Membangun model AI canggih.",
     "details": "Riset algoritma baru untuk computer vision.",
     "requirements": ["S2/S3 CS/Math", "Publikasi Jurnal"],
-    "logo": "ARL"
+    "logo": "ARL",
+    "sector": "Digital & TIK",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 27,
@@ -375,7 +427,9 @@
     "description": "Memberikan saran perpajakan klien.",
     "details": "Menghitung dan melaporkan pajak bulanan/tahunan.",
     "requirements": ["Sertifikasi BKP", "Teliti angka"],
-    "logo": "KPA"
+    "logo": "KPA",
+    "sector": "Keuangan",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 28,
@@ -389,7 +443,9 @@
     "description": "Menentukan visi produk aplikasi.",
     "details": "Prioritas backlog dan koordinasi tim dev.",
     "requirements": ["Pengalaman Product Management", "Analitis"],
-    "logo": "FS"
+    "logo": "FS",
+    "sector": "Keuangan",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 29,
@@ -403,7 +459,9 @@
     "description": "Memimpin section di dapur.",
     "details": "Memasak menu western dan menjaga kualitas rasa.",
     "requirements": ["Pengalaman Hotel/Resto", "Disiplin"],
-    "logo": "RM"
+    "logo": "RM",
+    "sector": "Lainnya",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 30,
@@ -417,7 +475,9 @@
     "description": "Posting konten dan balas DM.",
     "details": "Membuat jadwal posting dan interaksi follower.",
     "requirements": ["Gen Z", "Update tren", "Fast response"],
-    "logo": "FBL"
+    "logo": "FBL",
+    "sector": "Digital & TIK",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 31,
@@ -431,7 +491,9 @@
     "description": "Pengembangan aplikasi iPhone/iPad.",
     "details": "Maintenance aplikasi legacy dan fitur baru.",
     "requirements": ["Punya Macbook", "Pengalaman Swift"],
-    "logo": "TG"
+    "logo": "TG",
+    "sector": "Digital & TIK",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 32,
@@ -445,7 +507,9 @@
     "description": "Desain rumah tinggal dan ruko.",
     "details": "Membuat gambar kerja dan 3D visual.",
     "requirements": ["S1 Arsitektur", "Portofolio Desain"],
-    "logo": "SB"
+    "logo": "SB",
+    "sector": "Lainnya",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 33,
@@ -459,7 +523,9 @@
     "description": "Mengantar paket ke hub distribusi.",
     "details": "Merawat kendaraan dan kirim tepat waktu.",
     "requirements": ["SIM B1 Umum", "Paham jalan Jabodetabek"],
-    "logo": "EK"
+    "logo": "EK",
+    "sector": "Ritel",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 34,
@@ -473,7 +539,9 @@
     "description": "Perbaikan kelistrikan mesin pabrik.",
     "details": "Cek panel listrik dan instalasi kabel.",
     "requirements": ["SMK Listrik", "Bersedia shift"],
-    "logo": "PT"
+    "logo": "PT",
+    "sector": "Manufaktur",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 35,
@@ -487,7 +555,9 @@
     "description": "Menjembatani klien dan tim teknis.",
     "details": "Gather requirement dan buat dokumen FSD.",
     "requirements": ["Analitis", "Komunikasi Bagus", "IT Background"],
-    "logo": "CIT"
+    "logo": "CIT",
+    "sector": "Digital & TIK",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 36,
@@ -501,7 +571,9 @@
     "description": "Pelayanan pasien umum di IGD/Poli.",
     "details": "Pemeriksaan fisik dan resep obat.",
     "requirements": ["S1 Kedokteran + Profesi", "STR Aktif"],
-    "logo": "RKI"
+    "logo": "RKI",
+    "sector": "Kesehatan",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 37,
@@ -515,7 +587,9 @@
     "description": "Membantu kegiatan operasional direktur.",
     "details": "Atur jadwal meeting dan perjalanan dinas.",
     "requirements": ["D3/S1 Sekretaris", "Penampilan Rapih"],
-    "logo": "HC"
+    "logo": "HC",
+    "sector": "Lainnya",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 38,
@@ -529,7 +603,9 @@
     "description": "Backend high performance untuk payment.",
     "details": "Handling ribuan transaksi per detik.",
     "requirements": ["Pengalaman Golang", "High Scalability"],
-    "logo": "EWI"
+    "logo": "EWI",
+    "sector": "Keuangan",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 39,
@@ -543,7 +619,9 @@
     "description": "Melayani pembayaran belanja customer.",
     "details": "Scan barang dan terima pembayaran tunai/non-tunai.",
     "requirements": ["SMA/SMK", "Pengalaman kasir disukai"],
-    "logo": "SBm"
+    "logo": "SBm",
+    "sector": "Ritel",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 40,
@@ -557,7 +635,9 @@
     "description": "Foto produk katalog marketplace.",
     "details": "Styling produk dan editing foto.",
     "requirements": ["Kreatif", "Punya Kamera DSLR/Mirrorless"],
-    "logo": "SFK"
+    "logo": "SFK",
+    "sector": "Ritel",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 41,
@@ -571,7 +651,9 @@
     "description": "Menjual unit rumah subsidi/komersil.",
     "details": "Pameran dan follow up user.",
     "requirements": ["Suka tantangan", "Punya kendaraan"],
-    "logo": "DP"
+    "logo": "DP",
+    "sector": "Lainnya",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 42,
@@ -585,7 +667,9 @@
     "description": "Bantu guru & siswa masalah IT.",
     "details": "Instalasi software, perbaikan printer/wifi.",
     "requirements": ["SMK TKJ/S1 TI", "Sabar"],
-    "logo": "SI"
+    "logo": "SI",
+    "sector": "Digital & TIK",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 43,
@@ -599,7 +683,9 @@
     "description": "Service berkala mobil pelanggan.",
     "details": "Ganti oli, cek rem, dan servis mesin.",
     "requirements": ["SMK Otomotif", "Pengalaman 1 tahun"],
-    "logo": "BR"
+    "logo": "BR",
+    "sector": "Manufaktur",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 44,
@@ -613,7 +699,9 @@
     "description": "Membuat game casual Android.",
     "details": "Coding gameplay dan integrasi aset.",
     "requirements": ["Passion di game", "Logika kuat"],
-    "logo": "SGI"
+    "logo": "SGI",
+    "sector": "Digital & TIK",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 45,
@@ -627,7 +715,9 @@
     "description": "Membangun citra positif hotel.",
     "details": "Handle media dan tamu VIP.",
     "requirements": ["Good looking", "Komunikasi Bagus"],
-    "logo": "HR"
+    "logo": "HR",
+    "sector": "Lainnya",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 46,
@@ -641,7 +731,9 @@
     "description": "Input data formulir ke sistem.",
     "details": "Memastikan data akurat dan cepat.",
     "requirements": ["Min SMA/SMK", "Cepat mengetik"],
-    "logo": "PO"
+    "logo": "PO",
+    "sector": "Digital & TIK",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 47,
@@ -655,7 +747,9 @@
     "description": "Membuat ilustrasi cover buku anak.",
     "details": "Gambar karakter dan mewarnai.",
     "requirements": ["Style gambar menarik", "Portofolio"],
-    "logo": "PB"
+    "logo": "PB",
+    "sector": "Digital & TIK",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 48,
@@ -669,7 +763,9 @@
     "description": "Optimasi website agar page 1 Google.",
     "details": "Audit website dan strategi konten.",
     "requirements": ["Paham algoritma Google", "Analitis"],
-    "logo": "ST"
+    "logo": "ST",
+    "sector": "Digital & TIK",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 49,
@@ -683,7 +779,9 @@
     "description": "Merancang sistem ERP perusahaan.",
     "details": "Analisis kebutuhan user divisi lain.",
     "requirements": ["S1 Sistem Informasi", "Pengalaman ERP"],
-    "logo": "BUMN"
+    "logo": "BUMN",
+    "sector": "Digital & TIK",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   },
   {
     "id": 50,
@@ -697,6 +795,8 @@
     "description": "Mengantar makanan ke pelanggan.",
     "details": "Bekerja fleksibel sesuai waktu luang.",
     "requirements": ["Punya Motor", "SIM C", "SKCK"],
-    "logo": "LA"
+    "logo": "LA",
+    "sector": "Ritel",
+    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
   }
 ]

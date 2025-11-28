@@ -158,27 +158,33 @@ document.addEventListener("DOMContentLoaded", () => {
         const sector = sectorFilter ? sectorFilter.value : '';
         const loc = locationFilter ? locationFilter.value : '';
 
+        const keywordMap = {
+            'Digital & TIK': ['developer','react','node','ui','ux','tech','software','ict','it','golang','swift','network','security','seo','content','designer','game'],
+            'Manufaktur': ['manufaktur','pabrik','teknisi','produksi','otomotif','mesin','maintenance'],
+            'Keuangan': ['bank','finance','fintech','akuntansi','accounting','tax','pajak','analyst','kredit'],
+            'Ritel': ['retail','ritel','kasir','supermarket','toko','e-commerce','kurir','barista','resepsionis','customer service','logistik'],
+            'Pertanian': ['pertanian','agri','agriculture','pangan','perkebunan','ternak'],
+            'Pertambangan': ['tambang','mining','batubara','miner','smelter']
+        };
+
         filteredJobs = jobsData.filter(job => {
             const matchSearch = !term || job.title.toLowerCase().includes(term) || job.company.toLowerCase().includes(term);
             const matchLoc = !loc || job.location === loc;
-            
+
             let matchSector = true;
             if (sector) {
-                const keywords = {
-                    'Teknologi Informasi': ['developer', 'react', 'node', 'ui', 'tech'],
-                    'Jasa Keuangan': ['bank', 'finance', 'analyst'],
-                    'Manufaktur': ['manufaktur', 'pabrik'],
-                    'Pendidikan': ['guru', 'dosen'],
-                    'Kesehatan': ['dokter', 'medis']
-                };
-                const content = (job.title + ' ' + job.company + ' ' + job.description).toLowerCase();
-                const keys = keywords[sector] || [];
-                matchSector = keys.some(k => content.includes(k));
+                if (job.sector) {
+                    matchSector = job.sector === sector;
+                } else {
+                    const content = (job.title + ' ' + job.company + ' ' + job.description).toLowerCase();
+                    const keys = keywordMap[sector] || [];
+                    matchSector = keys.some(k => content.includes(k));
+                }
             }
             return matchSearch && matchLoc && matchSector;
         });
 
-        currentPage = 1; 
+        currentPage = 1;
         renderDisplay();
     }
 
@@ -230,6 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const descEl = document.getElementById('modalDescription');
         const detEl = document.getElementById('modalDetails');
         const reqEl = document.getElementById('modalRequirements');
+        const benEl = document.getElementById('modalBenefits');
         if(!modal) return;
         if(titleEl) titleEl.textContent = job.title;
         if(logoEl) logoEl.textContent = job.logo || '';
@@ -248,6 +255,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 const li = document.createElement('li');
                 li.textContent = r;
                 reqEl.appendChild(li);
+            });
+        }
+        if(benEl) {
+            benEl.innerHTML = '';
+            const defaultBenefits = [
+                'Pengalaman industri nyata',
+                'Mentoring profesional',
+                'Jaringan dan relasi kerja',
+                'Peningkatan soft skills',
+                'Kesempatan sertifikasi',
+                'Potensi karier jangka panjang'
+            ];
+            const bens = Array.isArray(job.benefits) ? job.benefits : defaultBenefits;
+            bens.forEach(b => {
+                const li = document.createElement('li');
+                li.textContent = b;
+                benEl.appendChild(li);
             });
         }
         selectedJob = job;
