@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEDA - Workforce Demographics</title>
+    <title>NEDA - Demografi Tenaga Kerja</title>
     
     <link rel="stylesheet" href="assete/css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,11 +19,11 @@
         </div>
         <ul class="nav-links">
             <a href="dashboard.html" class="nav-item">
-                     Home
+                    Beranda
                 </a>
                 <li class="relative group">
                 <button class="nav-item flex items-center gap-1 focus:outline-none">
-                    <span>National Employment Data</span>
+                    <span>Data Ketenagakerjaan Nasional</span>
                     <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
                 </button>
 
@@ -36,7 +36,7 @@
                                 <i class="fas fa-chart-bar text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-900 text-base mb-1">Employment Statistics</h4>
+                                <h4 class="font-bold text-gray-900 text-base mb-1">Statistik Ketenagakerjaan</h4>
                                 <p class="text-xs text-gray-500 leading-relaxed">Data statistik tenaga kerja nasional terkini.</p>
                             </div>
                         </a>
@@ -46,7 +46,7 @@
                                 <i class="fas fa-search-dollar text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-900 text-base mb-1">Wage Analysis</h4>
+                                <h4 class="font-bold text-gray-900 text-base mb-1">Analisis Upah</h4>
                                 <p class="text-xs text-gray-500 leading-relaxed">Analisis tren gaji di berbagai sektor industri.</p>
                             </div>
                         </a>
@@ -56,7 +56,7 @@
                                 <i class="fas fa-users text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-900 text-base mb-1">Demographics</h4>
+                                <h4 class="font-bold text-gray-900 text-base mb-1">Demografi</h4>
                                 <p class="text-xs text-gray-500 leading-relaxed">Penyebaran tenaga kerja berdasarkan demografi.</p>
                             </div>
                         </a>
@@ -74,10 +74,10 @@
                 </div>
             </li>   
             <a href="lowongan.html" class="nav-item">
-                 Job Portal
+                 Portal Lowongan Kerja
             </a>
             <a href="economicgrowth.html" class="nav-item">
-                 Economic growth Analysis
+                 Analisis Pertumbuhan Ekonomi
             </a>
         </ul>
         
@@ -86,58 +86,58 @@
         <button id="themeToggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition text-gray-600 dark:text-gray-200">
             <i class="fas fa-moon text-xl" id="themeIcon"></i>
         </button>
-        <button class="btn-login">Login</button>
+        <button class="btn-login">Masuk</button>
     </div>
     </nav>
 
     <main class="main-content">
         <header class="header">
-            <h1>Workforce Demographics & Population Insights</h1>
-            <p>This dashboard provides a demographic overview of the national workforce, including age, gender, and education levels.</p>
+            <h1>Demografi Tenaga Kerja & Wawasan Populasi</h1>
+            <p>Dasbor ini memberikan gambaran demografis angkatan kerja nasional, termasuk usia, jenis kelamin, dan tingkat pendidikan.</p>
             
             <div class="filters">
                 <select id="regionFilter" class="custom-select">
-                    <option value="All">Region: All</option>
-                    <option value="Java">Region: Java</option>
-                    <option value="Sumatra">Region: Sumatra</option>
-                    <option value="Kalimantan">Region: Kalimantan</option>
+                    <option value="All">Wilayah: Semua</option>
+                    <option value="Java">Wilayah: Jawa</option>
+                    <option value="Sumatra">Wilayah: Sumatera</option>
+                    <option value="Kalimantan">Wilayah: Kalimantan</option>
                 </select>
 
                 <select id="yearFilter" class="custom-select">
-                    <option value="2025" selected>Year: 2025 (Forecast)</option>
-                    <option value="2024">Year: 2024</option> 
-                    <option value="2023">Year: 2023</option>
-                    <option value="2022">Year: 2022</option>
-                    <option value="2021">Year: 2021</option>
+                    <option value="2025" selected>Tahun: 2025 (Prakiraan)</option>
+                    <option value="2024">Tahun: 2024</option> 
+                    <option value="2023">Tahun: 2023</option>
+                    <option value="2022">Tahun: 2022</option>
+                    <option value="2021">Tahun: 2021</option>
                 </select>
             </div>
         </header>
 
         <div class="dashboard-grid">
             <div class="card">
-                <h3 class="card-title">Population by Age Group</h3>
+                <h3 class="card-title">Populasi berdasarkan Kelompok Usia</h3>
                 <div class="chart-container-bar">
                     <canvas id="ageChart"></canvas>
                 </div>
             </div>
 
             <div class="card">
-                <h3 class="card-title">Gender Distribution</h3>
+                <h3 class="card-title">Distribusi Gender</h3>
                 <div class="chart-container-donut">
                     <canvas id="genderChart"></canvas>
                     <div class="donut-center-text">
-                        <h3 id="totalWorkforce">150M</h3>
-                        <span>Total Workforce</span>
+                        <h3 id="totalWorkforce">150Jt</h3>
+                        <span>Total Angkatan Kerja</span>
                     </div>
                 </div>
                 <div class="donut-legend">
-                    <div class="legend-item"><div class="dot" style="background:#1e3a8a"></div> Male (<span id="malePct">51%</span>)</div>
-                    <div class="legend-item"><div class="dot" style="background:#60a5fa"></div> Female (<span id="femalePct">49%</span>)</div>
+                    <div class="legend-item"><div class="dot" style="background:#1e3a8a"></div> Laki-laki (<span id="malePct">51%</span>)</div>
+                    <div class="legend-item"><div class="dot" style="background:#60a5fa"></div> Perempuan (<span id="femalePct">49%</span>)</div>
                 </div>
             </div>
 
             <div class="card education-section">
-                <h3 class="card-title">Highest Education Level Achieved</h3>
+                <h3 class="card-title">Tingkat Pendidikan Tertinggi</h3>
                 <div class="chart-container-bar">
                     <canvas id="educationChart"></canvas>
                 </div>
@@ -148,21 +148,21 @@
                     <i class="fa-solid fa-chart-pie fa-2x"></i>
                 </div>
                 <div class="insight-content">
-                    <div class="insight-tag">Insight</div>
-                    <h3 class="insight-title">Employment Snapshot</h3>
+                    <div class="insight-tag">Wawasan</div>
+                    <h3 class="insight-title">Ringkasan Ketenagakerjaan</h3>
                     
                     <div class="insight-details">
                         <div>
                             <div class="stat-big" id="unemploymentRate">8.2%</div>
-                            <p class="stat-label">Unemployment Rate</p>
+                            <p class="stat-label">Tingkat Pengangguran</p>
                         </div>
                         <ul class="bullet-list">
-                            <li>Analysis shows significant skill gaps in digital literacy.</li>
-                            <li>Market preference shifting based on economic conditions.</li>
-                            <li>Unemployment rate is a key indicator of economic health.</li>
+                            <li>Analisis menunjukkan kesenjangan keterampilan yang signifikan dalam literasi digital.</li>
+                            <li>Preferensi pasar bergeser berdasarkan kondisi ekonomi.</li>
+                            <li>Tingkat pengangguran adalah indikator utama kesehatan ekonomi.</li>
                         </ul>
                     </div>
-                    <button class="btn-primary">View Detailed Report</button>
+                    <button class="btn-primary">Lihat Laporan Rinci</button>
                 </div>
             </div>
         </div>

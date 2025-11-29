@@ -218,34 +218,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
 const dummyData = {
     '2025': {
         'All': {
             age: [15, 45, 80, 85, 65, 40], 
             gender: [52, 48], 
-            total: "138M",    
+            total: "138Jt",    
             edu: [60, 60, 30, 10], 
             unemployment: "14.5%"   
         },
         'Java': {
             age: [20, 50, 70, 75, 50, 30],
             gender: [53, 47],
-            total: "78M",
+            total: "78Jt",
             edu: [55, 65, 25, 10],
             unemployment: "13.8%"
         },
         'Sumatra': {
             age: [10, 40, 60, 60, 50, 30],
             gender: [51, 49],
-            total: "30M",
+            total: "30Jt",
             edu: [70, 40, 20, 5],
             unemployment: "15.2%"
         },
         'Kalimantan': {
             age: [10, 30, 40, 50, 40, 20],
             gender: [65, 35],
-            total: "12M",
+            total: "12Jt",
             edu: [60, 40, 15, 5],
             unemployment: "12.5%"
         }
@@ -255,28 +254,28 @@ const dummyData = {
         'All': {
             age: [25, 55, 85, 80, 55, 35], 
             gender: [51, 49], 
-            total: "145M",   
+            total: "145Jt",   
             edu: [50, 70, 40, 15], 
             unemployment: "11.4%" 
         },
         'Java': {
             age: [30, 60, 75, 70, 45, 25],
             gender: [54, 46],
-            total: "82M",
+            total: "82Jt",
             edu: [40, 80, 50, 20],
             unemployment: "10.5%"
         },
         'Sumatra': {
             age: [20, 45, 65, 55, 45, 28],
             gender: [50, 50],
-            total: "33M",
+            total: "33Jt",
             edu: [55, 50, 25, 8],
             unemployment: "12.1%"
         },
         'Kalimantan': {
             age: [15, 35, 45, 45, 35, 18],
             gender: [62, 38],
-            total: "14M",
+            total: "14Jt",
             edu: [55, 45, 18, 5],
             unemployment: "9.5%"
         }
@@ -286,28 +285,28 @@ const dummyData = {
         'All': {
             age: [35, 65, 90, 70, 50, 30],
             gender: [51, 49], 
-            total: "150M",
+            total: "150Jt",
             edu: [40, 85, 50, 25],
             unemployment: "8.2%"
         },
         'Java': {
             age: [40, 70, 80, 60, 40, 20],
             gender: [55, 45],
-            total: "85M",
+            total: "85Jt",
             edu: [30, 95, 60, 30],
             unemployment: "7.5%"
         },
         'Sumatra': {
             age: [30, 50, 70, 50, 40, 25],
             gender: [50, 50],
-            total: "35M",
+            total: "35Jt",
             edu: [45, 60, 30, 10],
             unemployment: "9.1%"
         },
         'Kalimantan': {
             age: [20, 40, 50, 40, 30, 15],
             gender: [60, 40],
-            total: "15M",
+            total: "15Jt",
             edu: [50, 50, 20, 5],
             unemployment: "6.8%"
         }
@@ -317,7 +316,7 @@ const dummyData = {
         'All': {
             age: [38, 62, 85, 75, 45, 28],
             gender: [52, 48],
-            total: "148M",
+            total: "148Jt",
             edu: [45, 80, 45, 20],
             unemployment: "9.5%"
         }
@@ -326,7 +325,7 @@ const dummyData = {
         'All': {
             age: [40, 60, 80, 70, 40, 25],
             gender: [53, 47],
-            total: "142M",
+            total: "142Jt",
             edu: [50, 75, 40, 15],
             unemployment: "10.2%"
         }
@@ -374,7 +373,7 @@ function initGenderChart(data) {
     genderChart = new Chart(ctxGender, {
         type: 'doughnut',
         data: {
-            labels: ['Male', 'Female'],
+            labels: ['Laki-laki', 'Perempuan'], 
             datasets: [{
                 data: data,
                 backgroundColor: ['#1e3a8a', '#60a5fa'],
@@ -395,7 +394,7 @@ function initEduChart(data) {
     eduChart = new Chart(ctxEdu, {
         type: 'bar',
         data: {
-            labels: ['High School', "Bachelor's", "Master's", 'PhD'],
+            labels: ['SMA', 'S1', 'S2', 'S3'], 
             datasets: [{
                 data: data,
                 backgroundColor: ['#d1d5db', '#1e3a8a', '#d1d5db', '#d1d5db'],
@@ -429,16 +428,21 @@ function updateDashboard() {
     eduChart.data.datasets[0].data = currentData.edu;
     eduChart.update();
 
-    document.getElementById('totalWorkforce').innerText = currentData.total;
-    document.getElementById('malePct').innerText = currentData.gender[0] + "%";
-    document.getElementById('femalePct').innerText = currentData.gender[1] + "%";
-    document.getElementById('unemploymentRate').innerText = currentData.unemployment;
+    if(document.getElementById('totalWorkforce')) 
+        document.getElementById('totalWorkforce').innerText = currentData.total;
+    if(document.getElementById('malePct'))
+        document.getElementById('malePct').innerText = currentData.gender[0] + "%";
+    if(document.getElementById('femalePct'))
+        document.getElementById('femalePct').innerText = currentData.gender[1] + "%";
     
     const unemploymentEl = document.getElementById('unemploymentRate');
-    if (parseFloat(currentData.unemployment) > 10) {
-        unemploymentEl.style.color = "#dc2626"; 
-    } else {
-        unemploymentEl.style.color = "#1e3a8a"; 
+    if (unemploymentEl) {
+        unemploymentEl.innerText = currentData.unemployment;
+        if (parseFloat(currentData.unemployment) > 10) {
+            unemploymentEl.style.color = "#dc2626"; 
+        } else {
+            unemploymentEl.style.color = "#1e3a8a"; 
+        }
     }
 }
 

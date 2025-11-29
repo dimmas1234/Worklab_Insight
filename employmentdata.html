@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>National Employment Data - Worklab Insight</title>
+    <title>Data Ketenagakerjaan Nasional - Worklab Insight</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="assete/css/style.css">
     
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="c"></script>
+    <script src="assete/js/test.js" defer></script> 
 </head>
 <body>
     <nav class="navbar animate-fade-down">
@@ -21,11 +21,11 @@
         </div>
         <ul class="nav-links hidden md:flex" id="desktopMenu">
             <a href="dashboard.html" class="nav-item">
-                     Home
+                    Beranda
                 </a>
                 <li class="relative group">
                 <button class="nav-item flex items-center gap-1 focus:outline-none">
-                    <span>National Employment Data</span>
+                    <span>Data Ketenagakerjaan Nasional</span>
                     <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
                 </button>
 
@@ -38,7 +38,7 @@
                                 <i class="fas fa-chart-bar text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-900 text-base mb-1">Employment Statistics</h4>
+                                <h4 class="font-bold text-gray-900 text-base mb-1">Statistik Ketenagakerjaan</h4>
                                 <p class="text-xs text-gray-500 leading-relaxed">Data statistik tenaga kerja nasional terkini.</p>
                             </div>
                         </a>
@@ -48,7 +48,7 @@
                                 <i class="fas fa-search-dollar text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-900 text-base mb-1">Wage Analysis</h4>
+                                <h4 class="font-bold text-gray-900 text-base mb-1">Analisis Upah</h4>
                                 <p class="text-xs text-gray-500 leading-relaxed">Analisis tren gaji di berbagai sektor industri.</p>
                             </div>
                         </a>
@@ -58,7 +58,7 @@
                                 <i class="fas fa-users text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-900 text-base mb-1">Demographics</h4>
+                                <h4 class="font-bold text-gray-900 text-base mb-1">Demografi</h4>
                                 <p class="text-xs text-gray-500 leading-relaxed">Penyebaran tenaga kerja berdasarkan demografi.</p>
                             </div>
                         </a>
@@ -76,10 +76,10 @@
                 </div>
             </li>   
             <a href="lowongan.html" class="nav-item">
-                 Job Portal
+                 Portal Lowongan Kerja
             </a>
             <a href="economicgrowth.html" class="nav-item">
-                 Economic growth Analysis
+                 Analisis Pertumbuhan Ekonomi
             </a>
         </ul>
         
@@ -104,42 +104,42 @@
         <section class="grid-cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             <div class="card bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
                 <div class="metric-header flex justify-between mb-2">
-                    <span class="metric-title text-sm text-gray-500 font-medium">Unemployment Rate</span>
+                    <span class="metric-title text-sm text-gray-500 font-medium">Tingkat Pengangguran</span>
                     <i class="fas fa-chart-line text-blue-500 bg-blue-50 p-2 rounded-lg"></i>
                 </div>
                 <div class="metric-value text-3xl font-bold text-gray-800">5.8%</div>
                 <div class="metric-trend text-red-500 text-xs mt-2 flex items-center gap-1">
-                    <i class="fas fa-arrow-down"></i> 0.2% <span class="text-gray-400">vs last year</span>
+                    <i class="fas fa-arrow-down"></i> 0.2% <span class="text-gray-400">vs tahun lalu</span>
                 </div>
             </div>
             <div class="card bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
                 <div class="metric-header flex justify-between mb-2">
-                    <span class="metric-title text-sm text-gray-500 font-medium">Labor Participation</span>
+                    <span class="metric-title text-sm text-gray-500 font-medium">Partisipasi Angkatan Kerja</span>
                     <i class="fas fa-users text-green-500 bg-green-50 p-2 rounded-lg"></i>
                 </div>
                 <div class="metric-value text-3xl font-bold text-gray-800">62.3%</div>
                 <div class="metric-trend text-green-500 text-xs mt-2 flex items-center gap-1">
-                    <i class="fas fa-arrow-up"></i> 0.5% <span class="text-gray-400">vs last year</span>
+                    <i class="fas fa-arrow-up"></i> 0.5% <span class="text-gray-400">vs tahun lalu</span>
                 </div>
             </div>
             <div class="card bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
                 <div class="metric-header flex justify-between mb-2">
-                    <span class="metric-title text-sm text-gray-500 font-medium">Youth Workforce</span>
+                    <span class="metric-title text-sm text-gray-500 font-medium">Tenaga Kerja Muda</span>
                     <i class="fas fa-graduation-cap text-purple-500 bg-purple-50 p-2 rounded-lg"></i>
                 </div>
                 <div class="metric-value text-3xl font-bold text-gray-800">12.5%</div>
                 <div class="metric-trend text-red-500 text-xs mt-2 flex items-center gap-1">
-                    <i class="fas fa-arrow-down"></i> 1.1% <span class="text-gray-400">vs last year</span>
+                    <i class="fas fa-arrow-down"></i> 1.1% <span class="text-gray-400">vs tahun lalu</span>
                 </div>
             </div>
             <div class="card bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all">
                 <div class="metric-header flex justify-between mb-2">
-                    <span class="metric-title text-sm text-gray-500 font-medium">Informal Workers</span>
+                    <span class="metric-title text-sm text-gray-500 font-medium">Pekerja Informal</span>
                     <i class="far fa-id-badge text-orange-500 bg-orange-50 p-2 rounded-lg"></i>
                 </div>
                 <div class="metric-value text-3xl font-bold text-gray-800">21.7%</div>
                 <div class="metric-trend text-green-500 text-xs mt-2 flex items-center gap-1">
-                    <i class="fas fa-arrow-up"></i> 0.8% <span class="text-gray-400">vs last year</span>
+                    <i class="fas fa-arrow-up"></i> 0.8% <span class="text-gray-400">vs tahun lalu</span>
                 </div>
             </div>
         </section>
@@ -147,7 +147,7 @@
         <section class="grid-charts-mid grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
             <div class="card bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                 <div class="chart-header flex justify-between items-center mb-4">
-                    <span class="chart-title font-semibold text-gray-800">Unemployment Trend (5 Years)</span>
+                    <span class="chart-title font-semibold text-gray-800">Tren Pengangguran (5 Tahun)</span>
                 </div>
                 <div class="chart-container h-64 w-full relative overflow-hidden">
                     <canvas id="unemploymentChart"></canvas>
@@ -155,7 +155,7 @@
             </div>
             <div class="card bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                 <div class="chart-header flex justify-between items-center mb-4">
-                    <span class="chart-title font-semibold text-gray-800">Labor Force Participation</span>
+                    <span class="chart-title font-semibold text-gray-800">Partisipasi Angkatan Kerja</span>
                 </div>
                 <div class="chart-container h-64 w-full relative overflow-hidden">
                     <canvas id="laborChart"></canvas>
@@ -167,14 +167,14 @@
             
             <div class="card bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                 <div class="chart-header flex justify-between items-center mb-4">
-                    <span class="chart-title font-semibold text-gray-800">Sector Growth Trend</span>
+                    <span class="chart-title font-semibold text-gray-800">Tren Pertumbuhan Sektor</span>
                     <select class="sector-select text-sm border-gray-200 rounded-md py-1 px-2 text-gray-600 focus:ring-blue-500" id="sectorSelect">
-                        <option value="Manufacturing">Manufacturing</option>
-                        <option value="Digital & ICT" selected>Digital & ICT</option>
-                        <option value="Agriculture">Agriculture</option>
-                        <option value="Mining">Mining</option>
-                        <option value="Retail">Retail</option>
-                        <option value="Finance">Finance</option> 
+                        <option value="Manufacturing">Manufaktur</option>
+                        <option value="Digital & ICT" selected>Digital & TIK</option>
+                        <option value="Agriculture">Pertanian</option>
+                        <option value="Mining">Pertambangan</option>
+                        <option value="Retail">Ritel</option>
+                        <option value="Finance">Keuangan</option> 
                     </select>
                 </div>
                 <div class="chart-container large-chart-container h-64 w-full relative overflow-hidden">
@@ -184,16 +184,16 @@
 
             <div class="card bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                 <div class="chart-header flex justify-between items-center mb-4">
-                    <span class="chart-title font-semibold text-gray-800">Total Workers Trend</span>
+                    <span class="chart-title font-semibold text-gray-800">Tren Total Pekerja</span>
                     <div class="flex items-center gap-2">
-                        <span class="text-xs text-gray-400 bg-gray-100 px-2 py-1 rounded hidden sm:inline-block">in Millions</span>
+                        <span class="text-xs text-gray-400 bg-gray-100 px-2 py-1 rounded hidden sm:inline-block">dalam Jutaan</span>
                         <select class="sector-select text-sm border-gray-200 rounded-md py-1 px-2 text-gray-600 focus:ring-blue-500" id="totalWorkersSelect">
-                            <option value="Manufacturing">Manufacturing</option>
-                            <option value="Digital & ICT" selected>Digital & ICT</option>
-                            <option value="Agriculture">Agriculture</option>
-                            <option value="Mining">Mining</option>
-                            <option value="Retail">Retail</option>
-                            <option value="Finance">Finance</option> 
+                            <option value="Manufacturing">Manufaktur</option>
+                            <option value="Digital & ICT" selected>Digital & TIK</option>
+                            <option value="Agriculture">Pertanian</option>
+                            <option value="Mining">Pertambangan</option>
+                            <option value="Retail">Ritel</option>
+                            <option value="Finance">Keuangan</option> 
                         </select>
                     </div>
                 </div>
@@ -309,9 +309,7 @@
     </main>
 
     <footer>
-        </footer>
-
-    <script src="assete/js/test.js"></script>
+    </footer>
 
 </body>
 </html>
