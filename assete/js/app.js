@@ -658,55 +658,72 @@ const initRegionalData = () => {
     }
 };
 
-// ==========================================
-// FEATURE 3: SECTOR DASHBOARD & CHARTS (UPDATED)
-// ==========================================
 const initSectorDashboard = () => {
-    // 1. Sector Cards Data
     const sectorData = {
         "Technology": {
             growth: "15.2%", growthBadge: "+2.1% YoY", growthDesc: "Didorong oleh AI & Digitalisasi",
             wage: "12,500,000", wageBadge: "High Paid", jobs: "14,205", jobsBadge: "Tinggi", jobsDesc: "Di seluruh portal",
-            skill: "Data Analysis", skillDesc: "Dibutuhkan di 70% lowongan", chartData: [1.2, 2.5, 3.8, 5.5, 7.8], chartColor: '#3b82f6'
+            skill: "Data Analysis", skillDesc: "Dibutuhkan di 70% lowongan", 
+            chartData: [5.2, 12.5, 10.8, 8.5, 15.2], // Data Grafik (Persen)
+            realData: [10500, 11800, 13100, 14200, 16350], // Data Hover (Jumlah Orang)
+            chartColor: '#3b82f6'
         },
         "Finance": {
             growth: "8.5%", growthBadge: "+1.4% YoY", growthDesc: "Stabil pasca pandemi",
             wage: "10,200,000", wageBadge: "Competitive", jobs: "8,450", jobsBadge: "Sedang", jobsDesc: "Fokus pada Fintech",
-            skill: "Risk Mgmt", skillDesc: "Sertifikasi FRM diutamakan", chartData: [4.0, 4.2, 4.5, 4.8, 5.1], chartColor: '#8b5cf6'
+            skill: "Risk Mgmt", skillDesc: "Sertifikasi FRM diutamakan", 
+            chartData: [4.0, 5.5, 6.2, 7.8, 8.5], 
+            realData: [7200, 7600, 8100, 8700, 9450],
+            chartColor: '#8b5cf6'
         },
         "Healthcare": {
             growth: "10.1%", growthBadge: "+3.5% YoY", growthDesc: "Kebutuhan tenaga medis naik",
             wage: "8,800,000", wageBadge: "Rising", jobs: "12,100", jobsBadge: "Sangat Tinggi", jobsDesc: "Kekurangan suplai perawat",
-            skill: "Patient Care", skillDesc: "STR aktif wajib", chartData: [3.0, 3.5, 4.2, 5.0, 6.2], chartColor: '#10b981'
+            skill: "Patient Care", skillDesc: "STR aktif wajib", 
+            chartData: [12.0, 14.5, 8.5, 9.2, 10.1], 
+            realData: [11000, 12600, 13600, 14800, 16300],
+            chartColor: '#10b981'
         },
         "Manufacturing": {
             growth: "-1.8%", growthBadge: "Menurun", growthDesc: "Dampak otomatisasi",
             wage: "5,400,000", wageBadge: "Standard", jobs: "6,200", jobsBadge: "Rendah", jobsDesc: "Pabrik padat karya berkurang",
-            skill: "Machine Ops", skillDesc: "Operasional mesin CNC", chartData: [6.0, 5.8, 5.5, 5.2, 5.0], chartColor: '#ef4444'
+            skill: "Machine Ops", skillDesc: "Operasional mesin CNC", 
+            chartData: [-5.0, 2.0, 1.5, 0.5, -1.8], 
+            realData: [19500, 18500, 18800, 18900, 18550],
+            chartColor: '#ef4444'
         },
         "Retail": {
             growth: "3.1%", growthBadge: "+0.2% YoY", growthDesc: "Peralihan ke E-commerce",
             wage: "4,200,000", wageBadge: "Entry Level", jobs: "22,500", jobsBadge: "Masif", jobsDesc: "Turnover karyawan tinggi",
-            skill: "Sales", skillDesc: "Komunikasi & Negosiasi", chartData: [4.5, 4.0, 4.1, 4.3, 4.5], chartColor: '#f59e0b'
+            skill: "Sales", skillDesc: "Komunikasi & Negosiasi", 
+            chartData: [-8.5, 4.0, 6.5, 3.0, 3.1], 
+            realData: [21000, 19200, 20500, 21100, 21800],
+            chartColor: '#f59e0b'
         },
         "Agriculture": {
             growth: "2.4%", growthBadge: "Stabil", growthDesc: "Musim panen raya",
             wage: "3,500,000", wageBadge: "Low", jobs: "15,000", jobsBadge: "Tinggi", jobsDesc: "Musiman",
-            skill: "Farming", skillDesc: "Pengalaman lapangan", chartData: [3.0, 3.1, 3.2, 3.4, 3.5], chartColor: '#84cc16'
+            skill: "Farming", skillDesc: "Pengalaman lapangan", 
+            chartData: [2.1, 2.3, 2.0, 2.5, 2.4], 
+            realData: [38000, 38800, 39500, 40500, 41500],
+            chartColor: '#84cc16'
         },
         "Construction": {
             growth: "5.5%", growthBadge: "Naik", growthDesc: "Proyek IKN & Infrastruktur",
             wage: "4,800,000", wageBadge: "Medium", jobs: "9,000", jobsBadge: "Sedang", jobsDesc: "Proyek pemerintah",
-            skill: "Civil Eng", skillDesc: "Sertifikasi K3", chartData: [2.0, 2.5, 3.5, 4.0, 5.0], chartColor: '#f97316'
+            skill: "Civil Eng", skillDesc: "Sertifikasi K3", 
+            chartData: [-2.0, 1.5, 3.5, 4.8, 5.5], 
+            realData: [8500, 8300, 8600, 9000, 9500],
+            chartColor: '#f97316'
         }
     };
 
-    // 2. Main Employment Trend Chart (Ctx: employmentTrendChart)
     const ctx = document.getElementById('employmentTrendChart')?.getContext('2d');
     let employmentChart;
 
-    const initMainChart = (data, color) => {
+    const initMainChart = (data, color, realData) => {
         if (!ctx) return;
+        
         const gradient = ctx.createLinearGradient(0, 0, 0, 300);
         gradient.addColorStop(0, color + '80');
         gradient.addColorStop(1, color + '00');
@@ -716,157 +733,170 @@ const initSectorDashboard = () => {
         employmentChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['2019', '2020', '2021', '2022', '2023'],
+                labels: ['2020', '2021', '2022', '2023', '2024'], 
                 datasets: [{
-                    label: 'Employment (Millions)', data: data, borderColor: color, backgroundColor: gradient,
-                    borderWidth: 4, pointBackgroundColor: '#fff', pointBorderColor: color, fill: true, tension: 0.4
+                    label: 'Growth Rate',
+                    data: data, 
+                    borderColor: color,
+                    backgroundColor: gradient,
+                    borderWidth: 3,
+                    pointBackgroundColor: '#fff',
+                    pointBorderColor: color,
+                    pointRadius: 6,
+                    pointHoverRadius: 8,
+                    fill: true,
+                    tension: 0.4
                 }]
             },
             options: {
-                responsive: true, maintainAspectRatio: false,
-                plugins: { legend: { display: false } },
-                scales: { y: { grid: { borderDash: [5, 5], color: '#f1f5f9' } }, x: { grid: { display: false } } },
-                animation: { duration: 1500, easing: 'easeOutQuart' }
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                        titleColor: '#1f2937',
+                        titleFont: { size: 13, weight: 'bold', family: 'Outfit' },
+                        bodyColor: '#4b5563',
+                        bodyFont: { size: 13, family: 'Outfit' },
+                        borderColor: '#e5e7eb',
+                        borderWidth: 1,
+                        padding: 12,
+                        boxPadding: 4,
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                return 'Tahun ' + tooltipItems[0].label;
+                            },
+                            label: function(context) {
+                                const index = context.dataIndex;
+                                const actualValue = realData[index]; 
+                                const percentage = context.parsed.y;
+                                
+                                const formattedValue = new Intl.NumberFormat('id-ID').format(actualValue);
+                                
+                                return ` ${formattedValue} Pekerja (Growth: ${percentage}%)`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true, 
+                        grid: {
+                            borderDash: [5, 5],
+                            color: '#f1f5f9'
+                        },
+                        ticks: {
+                            font: { family: 'Outfit', size: 11 },
+                            color: '#9ca3af',
+                            callback: function(value) { return value + '%' } 
+                        }
+                    },
+                    x: {
+                        display: true, 
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            font: { family: 'Outfit', size: 12, weight: '500' },
+                            color: '#6b7280',
+                            padding: 10
+                        }
+                    }
+                },
+                animation: {
+                    duration: 1200,
+                    easing: 'easeOutQuart'
+                }
             }
         });
     }
 
-    // 3. Side Charts (Growth & Total Workers)
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    
-    // Data untuk Chart Kiri (Pertumbuhan)
     const leftChartData = {
         "Manufacturing": [65, 64, 66, 68, 70, 69, 71, 73, 72, 74, 75, 76],
-        "Digital & ICT": [20, 45, 35, 60, 40, 55, 30, 65, 45, 70, 50, 85],
+        "Technology": [20, 45, 35, 60, 40, 55, 30, 65, 45, 70, 50, 85],
         "Agriculture": [50, 55, 60, 80, 85, 90, 85, 60, 55, 50, 45, 40],
         "Mining": [40, 38, 35, 32, 30, 35, 45, 55, 60, 58, 55, 50],
         "Retail": [30, 35, 40, 42, 45, 40, 38, 45, 55, 65, 80, 95],
-        "Finance": [55, 58, 60, 62, 65, 70, 72, 75, 74, 78, 80, 82]
+        "Finance": [55, 58, 60, 62, 65, 70, 72, 75, 74, 78, 80, 82],
+        "Healthcare": [60, 62, 65, 63, 68, 70, 72, 75, 78, 76, 80, 82],
+        "Construction": [45, 48, 52, 55, 60, 58, 62, 65, 68, 70, 72, 75]
     };
-
-    // Data untuk Chart Kanan (Total Pekerja) - INI YANG KEMARIN HILANG
     const rightChartData = {
         "Manufacturing": [18.2, 18.8, 17.9, 18.5, 18.1, 19.0, 18.3, 18.7, 17.8, 18.4, 18.9, 18.2],
-        "Digital & ICT": [5.5, 5.2, 5.8, 5.4, 6.1, 5.6, 5.9, 5.3, 6.0, 5.7, 6.2, 5.5],
+        "Technology": [5.5, 5.2, 5.8, 5.4, 6.1, 5.6, 5.9, 5.3, 6.0, 5.7, 6.2, 5.5],
         "Agriculture": [38.5, 36.2, 39.1, 37.5, 36.8, 38.9, 39.5, 36.5, 37.2, 38.8, 36.0, 37.8],
         "Mining": [1.25, 1.45, 1.15, 1.35, 1.50, 1.20, 1.40, 1.10, 1.30, 1.48, 1.22, 1.38],
         "Retail": [13.8, 14.5, 13.2, 14.1, 13.5, 15.0, 13.9, 14.6, 13.4, 14.8, 13.6, 15.2],
-        "Finance": [3.10, 3.25, 2.95, 3.15, 3.30, 3.05, 3.28, 2.98, 3.12, 3.26, 3.00, 3.18]
+        "Finance": [3.10, 3.25, 2.95, 3.15, 3.30, 3.05, 3.28, 2.98, 3.12, 3.26, 3.00, 3.18],
+        "Healthcare": [4.5, 4.6, 4.7, 4.8, 4.9, 5.0, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6],
+        "Construction": [8.2, 8.3, 8.5, 8.4, 8.6, 8.8, 9.0, 8.9, 9.1, 9.2, 9.3, 9.5]
     };
 
     const initSideCharts = () => {
         if (typeof Chart === 'undefined') return;
-
         const commonOptions = {
             responsive: true, maintainAspectRatio: false,
             plugins: { legend: { display: false } },
-            elements: { line: { tension: 0.4 } }
+            elements: { line: { tension: 0.4 } },
+            scales: { x: { display: false }, y: { display: false } }
         };
 
-        // --- Chart Kiri (Growth) ---
         const ctxLeft = document.getElementById('sectorChart');
         const selectLeft = document.getElementById('sectorSelect');
         let leftChart;
-
         if (ctxLeft) {
             leftChart = new Chart(ctxLeft.getContext('2d'), {
                 type: 'line',
-                data: {
-                    labels: months,
-                    datasets: [{ label: 'Growth', data: leftChartData["Digital & ICT"] || [], borderColor: '#1e3a8a', borderWidth: 3, fill: true }]
-                },
+                data: { labels: months, datasets: [{ label: 'Growth', data: leftChartData["Technology"], borderColor: '#1e3a8a', borderWidth: 3, fill: true, backgroundColor: 'rgba(30, 58, 138, 0.1)' }] },
                 options: commonOptions
             });
-
             if (selectLeft) {
                 selectLeft.addEventListener('change', function () {
-                    const val = this.value;
-                    if (leftChartData[val]) {
-                        leftChart.data.datasets[0].data = leftChartData[val];
-                        leftChart.update();
-                    }
+                    const key = this.value === "Digital & ICT" ? "Technology" : this.value;
+                    if (leftChartData[key]) { leftChart.data.datasets[0].data = leftChartData[key]; leftChart.update(); }
                 });
             }
         }
 
-        // --- Chart Kanan (Total Workers) - BAGIAN INI DIPERBAIKI ---
         const ctxRight = document.getElementById('sectorTotalChart');
         const selectRight = document.getElementById('totalWorkersSelect');
         let rightChart;
-
         if (ctxRight) {
              const gradRight = ctxRight.getContext('2d').createLinearGradient(0, 0, 0, 300);
              gradRight.addColorStop(0, 'rgba(16, 185, 129, 0.2)');
              gradRight.addColorStop(1, 'rgba(16, 185, 129, 0)');
-
              rightChart = new Chart(ctxRight.getContext('2d'), {
                 type: 'line',
-                data: {
-                    labels: months,
-                    datasets: [{
-                        label: 'Workers',
-                        data: rightChartData["Digital & ICT"] || [],
-                        borderColor: '#10b981', // Green Color
-                        backgroundColor: gradRight,
-                        borderWidth: 3,
-                        fill: true
-                    }]
-                },
+                data: { labels: months, datasets: [{ label: 'Workers', data: rightChartData["Technology"], borderColor: '#10b981', backgroundColor: gradRight, borderWidth: 3, fill: true }] },
                 options: commonOptions
             });
-
             if (selectRight) {
                 selectRight.addEventListener('change', function() {
-                    const val = this.value;
-                    const newData = rightChartData[val];
-                    if (newData) {
-                        rightChart.data.datasets[0].data = newData;
-                        rightChart.update();
-                    }
+                    const key = this.value === "Digital & ICT" ? "Technology" : this.value;
+                    if (rightChartData[key]) { rightChart.data.datasets[0].data = rightChartData[key]; rightChart.update(); }
                 });
             }
         }
     }
 
-    // Initialize Calls
-    if(sectorData['Technology']) initMainChart(sectorData['Technology'].chartData, sectorData['Technology'].chartColor);
+    if(sectorData['Technology']) initMainChart(sectorData['Technology'].chartData, sectorData['Technology'].chartColor, sectorData['Technology'].realData);
     initSideCharts();
     
-    // Animation Logic
     const replayAnimations = () => {
         const cards = document.querySelectorAll('.stat-card');
         cards.forEach((card, index) => {
-            card.classList.remove('animate-slide-left');
-            card.classList.add('opacity-0');
-            card.style.opacity = ''; 
-            card.style.transform = '';
+            card.classList.remove('animate-slide-left'); card.classList.add('opacity-0'); card.style.opacity = ''; card.style.transform = '';
             void card.offsetWidth;
-            setTimeout(() => {
-                card.classList.remove('opacity-0'); 
-                card.classList.add('animate-slide-left'); 
-            }, index * 150); 
+            setTimeout(() => { card.classList.remove('opacity-0'); card.classList.add('animate-slide-left'); }, index * 150); 
         });
-
-        const chartWrapper = document.querySelector('.chart-wrapper');
-        if(chartWrapper) {
-            chartWrapper.classList.remove('animate-slide-left');
-            chartWrapper.classList.add('opacity-0');
-            chartWrapper.style.opacity = ''; 
-            void chartWrapper.offsetWidth;
-            setTimeout(() => {
-                chartWrapper.classList.remove('opacity-0');
-                chartWrapper.classList.add('animate-slide-left');
-            }, 600); 
-        }
     }
 
-    // Dashboard Update Logic
-    const updateDashboard = (sector) => {
+    window.updateDashboard = (sector) => {
         const data = sectorData[sector];
         if(!data) return; 
-
         replayAnimations();
-
         const ids = [
             { id: 'valGrowth', val: data.growth }, { id: 'badgeGrowth', val: data.growthBadge }, { id: 'descGrowth', val: data.growthDesc },
             { id: 'valWage', val: data.wage }, { id: 'badgeWage', val: data.wageBadge },
@@ -874,48 +904,32 @@ const initSectorDashboard = () => {
             { id: 'valSkill', val: data.skill }, { id: 'descSkill', val: data.skillDesc },
             { id: 'sectorTitle', val: sector }
         ];
-
         ids.forEach(item => {
             const el = document.getElementById(item.id);
             if(el) {
                 el.textContent = item.val;
-                if(item.id === 'badgeGrowth') {
-                    if(data.growth.includes('-')) {
-                        el.className = "text-xs font-bold text-red-600 bg-red-100 px-2 py-1 rounded";
-                    } else {
-                        el.className = "text-xs font-bold text-orange-600 bg-orange-100 px-2 py-1 rounded";
-                    }
-                }
+                if(item.id === 'badgeGrowth') el.className = data.growth.includes('-') ? "text-xs font-bold text-red-600 bg-red-100 px-2 py-1 rounded" : "text-xs font-bold text-orange-600 bg-orange-100 px-2 py-1 rounded";
             }
         });
-
-        initMainChart(data.chartData, data.chartColor);
+        initMainChart(data.chartData, data.chartColor, data.realData);
     }
     
-    // Sector Select Button
     const btn = document.getElementById('btnSektorAnalysis');
     const list = document.getElementById('listSektorAnalysis');
     const label = document.getElementById('labelSektorAnalysis');
-
     if(btn && list) {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            list.classList.toggle('hidden');
-        });
-
+        btn.addEventListener('click', (e) => { e.stopPropagation(); list.classList.toggle('hidden'); });
         list.querySelectorAll('.option-item').forEach(item => {
             item.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const val = item.getAttribute('data-value');
                 label.textContent = val; 
                 list.classList.add('hidden');
-                updateDashboard(val);
+                window.updateDashboard(val); 
             });
         });
-
         document.addEventListener('click', () => list.classList.add('hidden'));
     }
-    
     replayAnimations();
 };
 
