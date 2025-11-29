@@ -989,98 +989,203 @@ const initSectorDashboard = () => {
     };
 
     const initMacroEconomics = () => {
-        const updateChart = () => {
-            if (!chartInstance) return;
-            const data = dataStore[currentMetric][currentSector][currentRegion];
-            const filteredLabels = data.labels.filter((_, i) => parseInt(data.labels[i]) <= maxYear);
-            const filteredData = data.data.slice(0, filteredLabels.length);
+    if (typeof Chart === 'undefined') return;
 
-            chartInstance.data.labels = filteredLabels;
-            chartInstance.data.datasets[0].data = filteredData;
-            const metricName = currentMetric === 'GDP' ? 'Pertumbuhan PDB' : 'Pertumbuhan Tenaga Kerja';
-            const sectorName = sectorMap[currentSector] || currentSector;
-            chartInstance.data.datasets[0].label = `${metricName} (${sectorName})`;
+    const ctx = document.getElementById('growthChart');
+    const compareToggle = document.getElementById('compareToggle');
+    const yearRange = document.getElementById('yearRange');
+    const currentYearDisplay = document.getElementById('currentYear');
+    const correlationTextEl = document.getElementById('correlationText');
+    const compareWrapper = document.getElementById('compareSelectWrapper');
 
-            if (isCompareMode) {
-                const compareData = dataStore[currentMetric][compareSector][currentRegion];
-                const compareFilteredData = compareData.data.slice(0, filteredLabels.length);
-                const compareSectorName = sectorMap[compareSector] || compareSector;
-                chartInstance.data.datasets[1] = {
-                    label: `${metricName} (${compareSectorName})`,
-                    data: compareFilteredData, borderColor: '#28a745', backgroundColor: 'rgba(40, 167, 69, 0.05)',
-                    borderWidth: 2, borderDash: [5, 5], tension: 0.3, pointRadius: 2, fill: false
-                };
+    const labelMetric = document.getElementById('labelMetric');
+    const labelSector = document.getElementById('labelSector');
+    const labelRegion = document.getElementById('labelRegion');
+    const labelCompare = document.getElementById('labelCompare');
+
+    if (!ctx || !yearRange) return;
+
+    const setupDropdown = (btnId, listId, labelId, type) => {
+        const btn = document.getElementById(btnId);
+        const list = document.getElementById(listId);
+        const label = document.getElementById(labelId);
+
+        if (!btn || !list) return;
+
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            document.querySelectorAll('[id^="list"]').forEach(el => {
+                if (el.id !== listId) el.classList.add('hidden');
+            });
+            list.classList.toggle('hidden');
+        });
+
+        list.querySelectorAll('.option-item').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const val = item.getAttribute('data-value');
+                const text = item.textContent;
+
+                if (label) label.textContent = text;
+
+                if (type === 'metric') currentMetric = val;
+                if (type === 'sector') currentSector = val;
+                if (type === 'region') currentRegion = val;
+                if (type === 'compare') compareSector = val;
+
+                if (type === 'sector' && isCompareMode && compareSector === currentSector) {
+                    const sectors = ['Technology', 'Manufacturing', 'Agriculture', 'Mining', 'Retail', 'Finance'];
+                    const newCompare = sectors.find(s => s !== currentSector) || 'Manufacturing';
+                    compareSector = newCompare;
+                    if(labelCompare) labelCompare.textContent = "Vs: " + (sectorMap[newCompare] || newCompare);
+                }
+
+                list.classList.add('hidden');
+                updateChart();
+                if(type !== 'compare') updateSidebar(); 
+            });
+        });
+    };
+
+    setupDropdown('btnMetric', 'listMetric', 'labelMetric', 'metric');
+    setupDropdown('btnSector', 'listSector', 'labelSector', 'sector');
+    setupDropdown('btnRegion', 'listRegion', 'labelRegion', 'region');
+    setupDropdown('btnCompare', 'listCompare', 'labelCompare', 'compare');
+
+    document.addEventListener('click', () => {
+        document.querySelectorAll('[id^="list"]').forEach(el => el.classList.add('hidden'));
+    });
+
+    const updateChart = () => {
+        if (!chartInstance) return;
+
+        if(!dataStore[currentMetric] || !dataStore[currentMetric][currentSector]) return;
+        const rawDataMain = dataStore[currentMetric][currentSector][currentRegion];
+        
+        let limitIndex = rawDataMain.labels.indexOf(String(maxYear));
+        if (limitIndex === -1) limitIndex = rawDataMain.labels.length - 1;
+        
+        const slicedLabels = rawDataMain.labels.slice(0, limitIndex + 1);
+        const slicedDataMain = rawDataMain.data.slice(0, limitIndex + 1);
+
+        chartInstance.data.labels = slicedLabels;
+        chartInstance.data.datasets[0].data = slicedDataMain;
+        chartInstance.data.datasets[0].label = `${currentMetric === 'GDP' ? 'PDB' : 'Pekerja'} (${sectorMap[currentSector] || currentSector})`;
+
+        if (isCompareMode) {
+            const rawDataCompare = dataStore[currentMetric][compareSector][currentRegion];
+            const slicedDataCompare = rawDataCompare.data.slice(0, limitIndex + 1);
+
+            const compareDataset = {
+                label: `${currentMetric === 'GDP' ? 'PDB' : 'Pekerja'} (${sectorMap[compareSector] || compareSector})`,
+                data: slicedDataCompare,
+                borderColor: '#ef4444',
+                backgroundColor: 'rgba(239, 68, 68, 0.05)',
+                borderWidth: 2,
+                borderDash: [5, 5],
+                tension: 0.3,
+                pointRadius: 3,
+                fill: false
+            };
+
+            if (chartInstance.data.datasets.length > 1) {
+                chartInstance.data.datasets[1].data = slicedDataCompare;
+                chartInstance.data.datasets[1].label = compareDataset.label;
             } else {
-                if (chartInstance.data.datasets[1]) chartInstance.data.datasets.splice(1, 1);
+                chartInstance.data.datasets.push(compareDataset);
             }
-            chartInstance.update();
+        } else {
+            if (chartInstance.data.datasets.length > 1) {
+                chartInstance.data.datasets.pop();
+            }
         }
+        chartInstance.update();
+    }
 
-        const updateSidebar = () => {
-            const data = dataStore[currentMetric][currentSector][currentRegion];
-            const bigStatEl = document.getElementById('bigStat');
-            if (bigStatEl) {
-                const lastVal = data.data[data.data.length - 1];
-                const unit = currentMetric === 'GDP' ? 'T IDR' : 'Ribu';
-                const growthClass = data.growth.includes('+') ? 'positive' : 'negative';
-                bigStatEl.innerHTML = `${lastVal} ${unit} <span class="growth ${growthClass}">↗ ${data.growth}</span>`;
-            }
+    const updateSidebar = () => {
+        const data = dataStore[currentMetric][currentSector][currentRegion];
+        const bigStatEl = document.getElementById('bigStat');
+        const chartTitleEl = document.getElementById('chartTitle');
+        const chartSubtitleEl = document.getElementById('chartSubtitle');
 
-            const summaryContainer = document.getElementById('summaryContent');
-            if (summaryContainer) {
-                const sectors = ['Technology', 'Manufacturing', 'Agriculture', 'Mining', 'Retail', 'Finance'];
-                summaryContainer.innerHTML = '';
-                sectors.forEach((sector) => {
-                    const sectorData = dataStore[currentMetric][sector][currentRegion];
-                    const isPositive = sectorData.summary.percent.includes('↑') || sectorData.summary.percent.includes('+');
-                    const colorClass = isPositive ? 'text-green-600 bg-green-50' : 'text-red-600 bg-red-50';
-                    const activeClass = (sector === currentSector) ? 'ring-2 ring-blue-500 ring-offset-2 rounded-lg p-2 -m-2 bg-blue-50/50' : '';
-                    summaryContainer.innerHTML += `
-                        <div class="stat-item flex justify-between items-center ${activeClass}">
-                            <div class="stat-info"><span class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">${sectorData.summary.label}</span><span class="block text-sm font-bold text-gray-800">${sectorData.summary.val}</span></div>
-                            <span class="text-xs font-bold px-2 py-1 rounded-full ${colorClass}">${sectorData.summary.percent}</span>
-                        </div>${sector !== 'Finance' && activeClass === '' ? '<div class="border-b border-gray-50"></div>' : ''}`;
-                });
-            }
+        if (bigStatEl) {
+            let limitIndex = data.labels.indexOf(String(maxYear));
+            if (limitIndex === -1) limitIndex = data.labels.length - 1;
             
-            const takeawaysList = document.getElementById('takeawaysList');
-            if(takeawaysList) takeawaysList.innerHTML = data.takeaways.map(item => `<li class="leading-relaxed">${item}</li>`).join('');
-
-            const correlationTextEl = document.getElementById('correlationText');
-            if (correlationTextEl) correlationTextEl.textContent = correlationData[currentSector] || "Data analisis belum tersedia.";
+            const currentVal = data.data[limitIndex];
+            const unit = currentMetric === 'GDP' ? 'T IDR' : 'Ribu Orang';
+            const growthClass = data.growth.includes('+') ? 'text-green-600' : 'text-red-600';
+            bigStatEl.innerHTML = `${currentVal} ${unit} <span class="text-sm font-medium ${growthClass} ml-2">${data.growth} (Total)</span>`;
         }
 
-        const ctx = document.getElementById('growthChart');
-        if (ctx) {
-            const gradient = ctx.getContext('2d').createLinearGradient(0, 0, 0, 400);
-            gradient.addColorStop(0, 'rgba(0, 123, 255, 0.4)');
-            gradient.addColorStop(1, 'rgba(0, 123, 255, 0.0)');
-            chartInstance = new Chart(ctx, {
-                type: 'line',
-                data: { labels: [], datasets: [{ label: 'Pertumbuhan PDB', data: [], borderColor: '#007bff', backgroundColor: gradient, borderWidth: 3, tension: 0.3, fill: true }] },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: true } }, scales: { y: { display: false }, x: { grid: { display: false } } } }
+        if(chartTitleEl) chartTitleEl.textContent = `${currentMetric === 'GDP' ? 'Pertumbuhan PDB' : 'Penyerapan Tenaga Kerja'} - Sektor ${sectorMap[currentSector] || currentSector}`;
+        if(chartSubtitleEl) chartSubtitleEl.textContent = currentMetric === 'GDP' ? 'Nilai Valuasi (Triliun IDR)' : 'Jumlah Pekerja (Ribuan Orang)';
+
+        const summaryContainer = document.getElementById('summaryContent');
+        if (summaryContainer) {
+            const sectors = ['Technology', 'Manufacturing', 'Agriculture', 'Mining', 'Retail', 'Finance'];
+            summaryContainer.innerHTML = '';
+            sectors.forEach((sector) => {
+                const sData = dataStore[currentMetric][sector][currentRegion];
+                const isPositive = sData.summary.percent.includes('↑') || sData.summary.percent.includes('+');
+                const colorClass = isPositive ? 'text-green-600 bg-green-50' : 'text-red-600 bg-red-50';
+                const activeClass = (sector === currentSector) ? 'ring-2 ring-blue-500 ring-offset-1 rounded-lg bg-blue-50' : 'hover:bg-gray-50';
+
+                summaryContainer.innerHTML += `
+                    <div class="stat-item p-3 rounded-lg transition-all cursor-pointer flex justify-between items-center ${activeClass}" 
+                         onclick="currentSector='${sector}'; document.getElementById('labelSector').textContent='${sectorMap[sector]}'; updateChart(); updateSidebar();">
+                        <div class="stat-info">
+                            <span class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">${sectorMap[sector] || sector}</span>
+                            <span class="block text-sm font-bold text-gray-800">${sData.summary.val}</span>
+                        </div>
+                        <span class="text-xs font-bold px-2 py-1 rounded-full ${colorClass}">${sData.summary.percent}</span>
+                    </div>`;
             });
         }
+        
+        const takeawaysList = document.getElementById('takeawaysList');
+        if(takeawaysList) takeawaysList.innerHTML = data.takeaways.map(item => `<li class="leading-relaxed text-gray-600"><span class="mr-2 text-blue-500">•</span>${item}</li>`).join('');
 
-        document.getElementById('metricSelect')?.addEventListener('change', function () { currentMetric = this.value; updateChart(); updateSidebar(); });
-        document.getElementById('sectorSelect')?.addEventListener('change', function () { currentSector = this.value; updateChart(); updateSidebar(); });
-        document.getElementById('compareSectorSelect')?.addEventListener('change', function () { compareSector = this.value; updateChart(); });
-        document.getElementById('regionSelect')?.addEventListener('change', function () { currentRegion = this.value; updateChart(); updateSidebar(); });
-        document.getElementById('compareToggle')?.addEventListener('change', function () { 
-            isCompareMode = this.checked; 
-            const dd = document.getElementById('compareSectorSelect');
-            if(dd) dd.style.display = isCompareMode ? 'inline-block' : 'none';
-            updateChart(); 
-        });
-        document.getElementById('yearRange')?.addEventListener('input', function () { 
-            maxYear = parseInt(this.value); 
-            document.getElementById('currentYear').textContent = maxYear; 
-            updateChart(); 
-        });
+        if (correlationTextEl) correlationTextEl.textContent = correlationData[currentSector] || "Data analisis belum tersedia.";
+    }
 
-        updateChart();
+    const gradient = ctx.getContext('2d').createLinearGradient(0, 0, 0, 400);
+    gradient.addColorStop(0, 'rgba(59, 130, 246, 0.5)');
+    gradient.addColorStop(1, 'rgba(59, 130, 246, 0.0)');
+
+    chartInstance = new Chart(ctx, {
+        type: 'line',
+        data: { labels: [], datasets: [{ label: 'Loading...', data: [], borderColor: '#3b82f6', backgroundColor: gradient, borderWidth: 3, tension: 0.4, fill: true }] },
+        options: { 
+            responsive: true, maintainAspectRatio: false, 
+            interaction: { mode: 'index', intersect: false },
+            plugins: { legend: { display: true }, tooltip: { backgroundColor: 'rgba(255, 255, 255, 0.9)', titleColor: '#1f2937', bodyColor: '#4b5563', borderColor: '#e5e7eb', borderWidth: 1 } },
+            scales: { y: { display: true, grid: { borderDash: [2, 4], color: '#f3f4f6' } }, x: { grid: { display: false } } }
+        }
+    });
+
+    compareToggle.addEventListener('change', function () { 
+        isCompareMode = this.checked; 
+        if(isCompareMode) {
+            compareWrapper.classList.remove('hidden');
+            compareWrapper.classList.add('block');
+        } else {
+            compareWrapper.classList.add('hidden');
+            compareWrapper.classList.remove('block');
+        }
+        updateChart(); 
+    });
+
+    yearRange.addEventListener('input', function () { 
+        maxYear = parseInt(this.value); 
+        if(currentYearDisplay) currentYearDisplay.textContent = maxYear; 
+        updateChart(); 
         updateSidebar();
-    };
+    });
+
+    updateChart();
+    updateSidebar();
+};
 
     const initCoreUI = () => {
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
