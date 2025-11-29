@@ -10,22 +10,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="assete/css/style.css">
+    <style>
+        body, input, select, textarea, button {
+            font-family: 'Outfit', sans-serif !important;
+        }
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-outfit">
 
-    <nav class="navbar animate-fade-down">
-        <div class="logo">
-            <img src="https://via.placeholder.com/40x40/1e3a8a/ffffff?text=W" alt="Logo">
-            <span>WorkLab Insight</span>
+    <nav class="navbar animate-fade-down relative bg-white shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="logo flex items-center gap-2">
+                    <img src="/assete/img/logo.png" alt="Logo" class="h-8">
+                    <span class="font-bold text-xl text-gray-800">WorkLab Insight</span>
+                </div>
+                <ul class="nav-links hidden md:flex items-center gap-8" id="desktopMenu">
+                    <a href="dashboard.html" class="nav-item text-gray-600 hover:text-blue-600 font-medium">Beranda</a>
+                    <a href="analisis.html" class="nav-item text-gray-600 hover:text-blue-600 font-medium">Data Ketenagakerjaan Nasional</a>
+                    <a href="lowongan.html" class="nav-item text-gray-600 hover:text-blue-600 font-medium">Portal Lowongan Kerja</a>
+                    <a href="economicgrowth.html" class="nav-item text-gray-600 hover:text-blue-600 font-medium">Analisis Pertumbuhan Ekonomi</a>
+                </ul>
+                <div class="flex items-center gap-4">
+                    <div class="mobile-menu md:hidden text-gray-600 text-2xl cursor-pointer" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <button class="bg-blue-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-blue-700 transition">Login</button>
+                </div>
+            </div>
         </div>
-        <ul class="nav-links" id="desktopMenu">
-            <a href="dashboard.html" class="nav-item">Home</a>
-            <a href="analisis.html" class="nav-item nav-active">National Employment Data</a>
-            <a href="lowongan.html" class="nav-item">Job Portal</a>
-            <a href="aboutme.html" class="nav-item">Economic Growth Analysis</a>
-        </ul>
-        <div class="mobile-menu md:hidden text-primary-blue text-2xl cursor-pointer" id="mobileMenuBtn"><i class="fas fa-bars"></i></div>
-        <button class="btn-login">Login</button>
+        <!-- Mobile Dropdown -->
+        <div id="mobileDropdown" class="md:hidden absolute right-4 top-16 mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-100 hidden z-50">
+            <a href="dashboard.html" class="block px-4 py-3 nav-item hover:bg-blue-50">Beranda</a>
+            <a href="analisis.html" class="block px-4 py-3 nav-item hover:bg-blue-50">Data Ketenagakerjaan Nasional</a>
+            <a href="lowongan.html" class="block px-4 py-3 nav-item hover:bg-blue-50">Portal Lowongan Kerja</a>
+            <a href="economicgrowth.html" class="block px-4 py-3 nav-item hover:bg-blue-50">Analisis Pertumbuhan Ekonomi</a>
+        </div>
     </nav>
 
     <header class="pt-32 pb-16 bg-white border-b border-gray-200">
@@ -52,23 +72,23 @@
                 </div>
                 
                 <div class="md:w-2/3 article-content">
-<p>
+                    <p class="mb-4 text-gray-600 leading-relaxed">
                         Pemutusan Hubungan Kerja (PHK) massal telah menjadi isu sentral dalam beberapa tahun terakhir, terutama di sektor teknologi dan manufaktur. Fenomena ini bukan sekadar siklus bisnis biasa, melainkan akibat dari <strong>koreksi pasar global</strong> pasca-pandemi dan percepatan adopsi otomatisasi.
                     </p>
-                    <p>
+                    <p class="mb-4 text-gray-600 leading-relaxed">
                         Perusahaan kini beralih dari strategi "Growth at all costs" menjadi "Sustainability & Profitability". Hal ini memaksa restrukturisasi besar-besaran yang berdampak pada ribuan tenaga kerja terampil.
                     </p>                    
-                    <div onclick="showDetail('faktorPHK')" class="interactive-card bg-gray-50 p-6 rounded-xl border-l-4 border-red-500 mt-6">
+                    <div onclick="showDetail('faktorPHK')" class="interactive-card bg-gray-50 p-6 rounded-xl border-l-4 border-red-500 mt-6 cursor-pointer hover:bg-gray-100 transition group">
                         <div class="flex justify-between items-start">
-                            <h4 class="font-bold text-gray-900 mb-3 text-lg">Faktor Pemicu Utama:</h4>
+                            <h4 class="font-bold text-gray-900 mb-3 text-lg group-hover:text-red-600 transition">Faktor Pemicu Utama:</h4>
                             <i class="fas fa-info-circle text-red-400 text-xl"></i>
                         </div>
-                        <ul class="feature-list list-none space-y-2 text-gray-600 text-sm">
-                            <li>Ketidakpastian ekonomi global dan inflasi tinggi.</li>
-                            <li>Perubahan perilaku konsumen pasca-pandemi.</li>
-                            <li>Implementasi AI yang menggantikan peran administratif.</li>
+                        <ul class="feature-list list-none space-y-2 text-gray-600 text-sm mb-3">
+                            <li>• Ketidakpastian ekonomi global dan inflasi tinggi.</li>
+                            <li>• Perubahan perilaku konsumen pasca-pandemi.</li>
+                            <li>• Implementasi AI yang menggantikan peran administratif.</li>
                         </ul>
-                        <div class="click-indicator"><i class="fas fa-hand-pointer"></i> Klik untuk analisis detail</div>
+                        <div class="text-xs text-blue-600 font-semibold mt-2"><i class="fas fa-hand-pointer mr-1"></i> Klik untuk analisis detail</div>
                     </div>
                 </div>
             </div>
@@ -84,24 +104,24 @@
                 </div>
                 
                 <div class="md:w-2/3 article-content">
-                    <p>
+                    <p class="mb-4 text-gray-600 leading-relaxed">
                         Program magang sejatinya dirancang sebagai jembatan antara dunia pendidikan dan industri. Namun, data lapangan menunjukkan adanya tren <strong>penyalahgunaan wewenang</strong> di mana pemagang diperlakukan layaknya karyawan penuh waktu tanpa kompensasi atau perlindungan yang layak.
                     </p>
-                    <p>
+                    <p class="mb-4 text-gray-600 leading-relaxed">
                         Banyak perusahaan memanfaatkan celah regulasi untuk merekrut pemagang guna mengisi posisi strategis dengan biaya operasional yang minim, seringkali tanpa kurikulum pembelajaran yang jelas.
                     </p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                         
-                        <div onclick="showDetail('magangIdeal')" class="interactive-card border border-green-200 p-5 rounded-xl hover:bg-green-50 transition">
-                            <h5 class="font-bold text-gray-900 mb-2 flex items-center"><i class="fas fa-check-circle text-green-500 mr-2 text-xl"></i>Magang Ideal</h5>
+                        <div onclick="showDetail('magangIdeal')" class="interactive-card border border-green-200 p-5 rounded-xl hover:bg-green-50 transition cursor-pointer group">
+                            <h5 class="font-bold text-gray-900 mb-2 flex items-center group-hover:text-green-700"><i class="fas fa-check-circle text-green-500 mr-2 text-xl"></i>Magang Ideal</h5>
                             <p class="text-xs text-gray-500">Memiliki mentor, kurikulum jelas, uang saku layak, beban kerja untuk belajar.</p>
-                            <div class="click-indicator text-green-600"><i class="fas fa-plus-circle"></i> Lihat Standar</div>
+                            <div class="text-xs text-green-600 font-semibold mt-2"><i class="fas fa-plus-circle mr-1"></i> Lihat Standar</div>
                         </div>
 
-                        <div onclick="showDetail('eksploitasi')" class="interactive-card border border-red-200 p-5 rounded-xl bg-red-50/30 hover:bg-red-50 transition">
+                        <div onclick="showDetail('eksploitasi')" class="interactive-card border border-red-200 p-5 rounded-xl bg-red-50/30 hover:bg-red-50 transition cursor-pointer group">
                             <h5 class="font-bold text-red-700 mb-2 flex items-center"><i class="fas fa-times-circle mr-2 text-xl"></i>Eksploitasi</h5>
                             <p class="text-xs text-red-600">Beban kerja full-time, lembur tanpa upah, menggantikan peran staff tetap.</p>
-                            <div class="click-indicator text-red-600"><i class="fas fa-exclamation-triangle"></i> Lihat Indikator</div>
+                            <div class="text-xs text-red-600 font-semibold mt-2"><i class="fas fa-exclamation-triangle mr-1"></i> Lihat Indikator</div>
                         </div>
 
                     </div>
@@ -118,12 +138,13 @@
                     <p class="text-sm text-gray-400">Tulang punggung ekonomi yang rentan guncangan.</p>
                 </div>
                 <div class="md:w-2/3 article-content">
-                    <p>
+                    <p class="mb-4 text-gray-600 leading-relaxed">
                         Lebih dari 50% tenaga kerja Indonesia berada di sektor informal (UMKM, Pekerja Gig, Freelancer). Meskipun menawarkan fleksibilitas dan menjadi bantalan saat krisis ekonomi, sektor ini memiliki kerentanan tinggi: <strong>minimnya jaminan sosial (BPJS)</strong> dan ketidakpastian pendapatan.
                     </p>
-                    <p>
+                    <p class="mb-4 text-gray-600 leading-relaxed">
                         Di era Gig Economy, pekerja platform (seperti ojek online) sering diklasifikasikan sebagai "mitra", yang secara hukum melepaskan tanggung jawab perusahaan terhadap hak-hak normatif pekerja seperti THR dan asuransi kesehatan.
-                    </p>                    <div class="mt-6">
+                    </p>                    
+                    <div class="mt-6">
                         <div class="flex justify-between text-sm font-bold mb-2"><span class="text-gray-600">Komposisi Tenaga Kerja</span><span class="text-blue-600">60% Informal</span></div>
                         <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden"><div class="bg-blue-600 h-4 rounded-full" style="width: 60%"></div></div>
                     </div>
@@ -133,6 +154,7 @@
 
     </main>
 
+    <!-- DETAIL MODAL -->
     <div id="detailModal" class="fixed inset-0 bg-black bg-opacity-60 hidden z-[10000] flex items-center justify-center p-4 backdrop-blur-sm transition-all duration-300">
         <div class="bg-white rounded-xl w-full max-w-2xl max-h-[85vh] overflow-y-auto shadow-2xl animate-modal-pop relative">
             
