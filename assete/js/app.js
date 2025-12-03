@@ -1274,6 +1274,7 @@ const initJobsSystem = () => {
     }
   };
 
+  //untuk lowongan
   const searchInput = document.getElementById("searchInput");
   const sectorFilter = document.getElementById("sectorFilter");
   const locationFilter = document.getElementById("locationFilter");
