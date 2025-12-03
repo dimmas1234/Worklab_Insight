@@ -13,7 +13,7 @@
     "requirements": ["Min 1 tahun pengalaman", "Menguasai React.js", "Paham UI/UX"],
     "logo": "TM",
     "sector": "Digital & TIK",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Kerja hybrid", "BPJS Kesehatan & Ketenagakerjaan", "Budget pelatihan/sertifikasi", "Allowance perangkat kerja", "Bonus kinerja"]
   },
   {
     "id": 2,
@@ -29,7 +29,7 @@
     "requirements": ["Mahasiswa semester 5+", "Paham SEO", "Kreatif"],
     "logo": "ID",
     "sector": "Digital & TIK",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Uang saku", "Mentoring harian", "Sertifikat magang", "Jam kerja fleksibel", "Akses materi pelatihan"]
   },
   {
     "id": 3,
@@ -45,7 +45,7 @@
     "requirements": ["S1 Statistik/Matematika", "Menguasai SQL", "Analitis kuat"],
     "logo": "BFI",
     "sector": "Keuangan",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["BPJS lengkap", "Bonus tahunan", "Hybrid/WFH sesuai kebijakan", "Pelatihan data & compliance", "Tunjangan komunikasi"]
   },
   {
     "id": 4,
@@ -61,7 +61,7 @@
     "requirements": ["Pengalaman 2 tahun", "Menguasai Node.js", "Paham REST API"],
     "logo": "SDI",
     "sector": "Digital & TIK",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Kerja hybrid", "Asuransi kesehatan", "Budget sertifikasi cloud", "Allowance perangkat kerja", "Bonus kinerja"]
   },
   {
     "id": 5,
@@ -77,7 +77,7 @@
     "requirements": ["Portofolio UX", "Menguasai Figma", "Komunikatif"],
     "logo": "DSC",
     "sector": "Digital & TIK",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Jam kerja fleksibel", "Bonus per proyek", "Remote opsional", "Allowance perangkat desain", "Review portofolio berkala"]
   },
   {
     "id": 6,
@@ -93,7 +93,7 @@
     "requirements": ["Sertifikasi PMP", "Pengalaman 3 tahun", "Leadership"],
     "logo": "CGI",
     "sector": "Digital & TIK",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Asuransi kesehatan", "Bonus kinerja", "Tunjangan transport", "Pelatihan leadership", "Cuti tahunan"]
   },
   {
     "id": 7,
@@ -109,7 +109,7 @@
     "requirements": ["Paham State Management", "Pengalaman rilis di Playstore"],
     "logo": "PAN",
     "sector": "Digital & TIK",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Kerja hybrid", "Allowance perangkat mobile", "Budget sertifikasi", "Asuransi kesehatan", "Bonus kinerja"]
   },
   {
     "id": 8,
@@ -125,7 +125,7 @@
     "requirements": ["Suka menulis", "Teliti Ejaan", "Kreatif"],
     "logo": "MKJ",
     "sector": "Digital & TIK",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Uang saku", "Mentoring konten", "Sertifikat magang", "Jam fleksibel", "Akses tools premium"]
   },
   {
     "id": 9,
@@ -141,7 +141,7 @@
     "requirements": ["S1 Psikologi/Hukum", "Paham UU Tenaga Kerja"],
     "logo": "PMG",
     "sector": "Manufaktur",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["BPJS lengkap", "Tunjangan makan & transport", "Insentif kehadiran", "Pelatihan HR & K3", "Cuti tahunan"]
   },
   {
     "id": 10,
@@ -157,7 +157,7 @@
     "requirements": ["Pengalaman Linux", "Sertifikasi AWS", "Scripting"],
     "logo": "UT",
     "sector": "Digital & TIK",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Kerja hybrid/remote", "On-call allowance", "Budget sertifikasi cloud", "Asuransi kesehatan", "Allowance perangkat kerja"]
   },
   {
     "id": 11,
@@ -173,7 +173,7 @@
     "requirements": ["Target oriented", "Punya kendaraan", "SIM C/A"],
     "logo": "POJ",
     "sector": "Manufaktur",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Komisi penjualan", "Tunjangan transport & bensin", "Tunjangan komunikasi", "BPJS", "Bonus target"]
   },
   {
     "id": 12,
@@ -189,7 +189,7 @@
     "requirements": ["Artististik", "Portofolio visual", "Deadline oriented"],
     "logo": "AWW",
     "sector": "Digital & TIK",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Kontrak jelas", "Bonus proyek", "Jam fleksibel", "Pembayaran tepat waktu", "BPJS sesuai regulasi"]
   },
   {
     "id": 13,
@@ -205,7 +205,7 @@
     "requirements": ["Kuat di OOP", "Paham Microservices", "Pengalaman Java"],
     "logo": "BMS",
     "sector": "Keuangan",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["BPJS lengkap", "Bonus tahunan", "Pelatihan kepatuhan", "Hybrid/WFH sesuai kebijakan", "Tunjangan komunikasi"]
   },
   {
     "id": 14,
@@ -221,7 +221,7 @@
     "requirements": ["D3/S1 Akuntansi", "Teliti", "Jujur"],
     "logo": "CSA",
     "sector": "Keuangan",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["BPJS", "Lembur dibayar", "Tunjangan makan", "Pelatihan akuntansi", "Cuti tahunan"]
   },
   {
     "id": 15,
@@ -237,7 +237,7 @@
     "requirements": ["Detail oriented", "Paham SDLC", "Bisa coding basic"],
     "logo": "SE",
     "sector": "Digital & TIK",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Kerja hybrid", "Budget sertifikasi QA", "Asuransi kesehatan", "Allowance perangkat kerja", "Bonus kinerja"]
   },
   {
     "id": 16,
@@ -253,7 +253,7 @@
     "requirements": ["SMA/SMK", "Sehat jasmani", "Bisa kerja shift"],
     "logo": "LC",
     "sector": "Ritel",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Tunjangan shift", "Lembur dibayar", "Seragam kerja", "Tunjangan makan", "Insentif kehadiran"]
   },
   {
     "id": 17,
@@ -269,7 +269,7 @@
     "requirements": ["Sabar", "Komunikatif", "Bisa mengetik cepat"],
     "logo": "ECT",
     "sector": "Ritel",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Tunjangan shift", "BPJS", "Insentif performa", "Pelatihan layanan pelanggan", "Jadwal fleksibel"]
   },
   {
     "id": 18,
@@ -285,7 +285,7 @@
     "requirements": ["Punya alat sendiri", "Portofolio video", "Kreatif"],
     "logo": "WO",
     "sector": "Digital & TIK",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Pembayaran per proyek", "Reimbursement transport", "Jadwal fleksibel", "Eksposur portofolio", "Dukungan rental alat"]
   },
   {
     "id": 19,
@@ -301,7 +301,7 @@
     "requirements": ["S1 Farmasi + Apt", "Punya STRA aktif"],
     "logo": "KST",
     "sector": "Kesehatan",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["BPJS kesehatan", "Tunjangan profesi apoteker", "Seragam kerja", "Tunjangan shift", "Pelatihan pengembangan profesional"]
   },
   {
     "id": 20,
@@ -317,7 +317,7 @@
     "requirements": ["TOEFL > 550", "Penyabar", "Ceria"],
     "logo": "ECC",
     "sector": "Pendidikan",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Bayaran per jam", "Jadwal fleksibel", "Pelatihan pengajaran", "Materi ajar disediakan", "Bonus performa kelas"]
   },
   {
     "id": 21,
@@ -333,7 +333,7 @@
     "requirements": ["Sertifikasi CEH/CISSP", "Pengalaman Security"],
     "logo": "BN",
     "sector": "Keuangan",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Budget sertifikasi keamanan", "Asuransi kesehatan", "Bonus tahunan", "Hybrid/remote", "On-call allowance"]
   },
   {
     "id": 22,
@@ -349,7 +349,7 @@
     "requirements": ["Minat pada kopi", "Ramah", "Jujur"],
     "logo": "KS",
     "sector": "Ritel",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Tunjangan shift", "Diskon karyawan", "Seragam kerja", "Tunjangan makan", "Lembur dibayar"]
   },
   {
     "id": 23,
@@ -365,7 +365,7 @@
     "requirements": ["S1 Hukum", "Pengalaman di Notaris/Lawfirm"],
     "logo": "PPI",
     "sector": "Lainnya",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["BPJS", "Reimburse biaya legal", "Pelatihan update regulasi", "Tunjangan transport", "Cuti tahunan"]
   },
   {
     "id": 24,
@@ -381,7 +381,7 @@
     "requirements": ["Sertifikat CCNA/MTCNA", "Siap mobile"],
     "logo": "IC",
     "sector": "Digital & TIK",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["On-call allowance", "Budget sertifikasi jaringan", "Tunjangan transport", "BPJS", "Hybrid sesuai tugas"]
   },
   {
     "id": 25,
@@ -477,7 +477,7 @@
     "requirements": ["Gen Z", "Update tren", "Fast response"],
     "logo": "FBL",
     "sector": "Digital & TIK",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Kerja hybrid", "BPJS", "Bonus konten viral", "Allowance perangkat", "Pelatihan content marketing"]
   },
   {
     "id": 31,
@@ -493,7 +493,7 @@
     "requirements": ["Punya Macbook", "Pengalaman Swift"],
     "logo": "TG",
     "sector": "Digital & TIK",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Kerja hybrid", "Allowance perangkat Apple", "Budget sertifikasi iOS", "Asuransi kesehatan", "Bonus kinerja"]
   },
   {
     "id": 32,
@@ -509,7 +509,7 @@
     "requirements": ["S1 Arsitektur", "Portofolio Desain"],
     "logo": "SB",
     "sector": "Lainnya",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Bonus proyek", "Fleksibilitas waktu", "Support software lisensi", "Pembayaran milestone", "BPJS"]
   },
   {
     "id": 33,
@@ -525,7 +525,7 @@
     "requirements": ["SIM B1 Umum", "Paham jalan Jabodetabek"],
     "logo": "EK",
     "sector": "Ritel",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Tunjangan makan & bensin", "Insentif perjalanan", "BPJS", "Seragam kerja", "Bonus ketepatan pengiriman"]
   },
   {
     "id": 34,
@@ -541,7 +541,7 @@
     "requirements": ["SMK Listrik", "Bersedia shift"],
     "logo": "PT",
     "sector": "Manufaktur",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["APD lengkap", "Tunjangan shift", "Pelatihan K3", "Lembur dibayar", "Insentif kehadiran"]
   },
   {
     "id": 35,
@@ -557,7 +557,7 @@
     "requirements": ["Analitis", "Komunikasi Bagus", "IT Background"],
     "logo": "CIT",
     "sector": "Digital & TIK",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Kerja hybrid", "BPJS", "Tunjangan komunikasi", "Pelatihan analisis bisnis", "Bonus kinerja"]
   },
   {
     "id": 36,
@@ -573,7 +573,7 @@
     "requirements": ["S1 Kedokteran + Profesi", "STR Aktif"],
     "logo": "RKI",
     "sector": "Kesehatan",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["BPJS kesehatan", "Tunjangan praktik dokter", "Jadwal dinas terstruktur", "Pelatihan medis berkelanjutan", "Seragam kerja"]
   },
   {
     "id": 37,
@@ -589,7 +589,7 @@
     "requirements": ["D3/S1 Sekretaris", "Penampilan Rapih"],
     "logo": "HC",
     "sector": "Lainnya",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["BPJS", "Tunjangan komunikasi", "Travel allowance", "Cuti tahunan", "Bonus performa"]
   },
   {
     "id": 38,
@@ -605,7 +605,7 @@
     "requirements": ["Pengalaman Golang", "High Scalability"],
     "logo": "EWI",
     "sector": "Keuangan",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Bonus tahunan", "Budget sertifikasi", "Asuransi kesehatan", "Hybrid", "Allowance perangkat"]
   },
   {
     "id": 39,
@@ -621,7 +621,7 @@
     "requirements": ["SMA/SMK", "Pengalaman kasir disukai"],
     "logo": "SBm",
     "sector": "Ritel",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Tunjangan shift", "Diskon karyawan", "Seragam kerja", "BPJS", "Lembur dibayar"]
   },
   {
     "id": 40,
@@ -637,7 +637,7 @@
     "requirements": ["Kreatif", "Punya Kamera DSLR/Mirrorless"],
     "logo": "SFK",
     "sector": "Ritel",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Bayaran per proyek", "Jadwal fleksibel", "Studio support", "Eksposur portofolio", "Reimbursement alat"]
   },
   {
     "id": 41,
@@ -653,7 +653,7 @@
     "requirements": ["Suka tantangan", "Punya kendaraan"],
     "logo": "DP",
     "sector": "Lainnya",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Komisi penjualan tinggi", "Insentif event", "BPJS", "Allowance transport", "Pelatihan sales"]
   },
   {
     "id": 42,
@@ -669,7 +669,7 @@
     "requirements": ["SMK TKJ/S1 TI", "Sabar"],
     "logo": "SI",
     "sector": "Digital & TIK",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["BPJS", "Tunjangan alat kerja", "Pelatihan troubleshooting", "Cuti tahunan", "Jam kerja stabil"]
   },
   {
     "id": 43,
@@ -685,7 +685,7 @@
     "requirements": ["SMK Otomotif", "Pengalaman 1 tahun"],
     "logo": "BR",
     "sector": "Manufaktur",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Tunjangan tools", "Seragam kerja", "Pelatihan otomotif", "BPJS", "Lembur dibayar"]
   },
   {
     "id": 44,
@@ -701,7 +701,7 @@
     "requirements": ["Passion di game", "Logika kuat"],
     "logo": "SGI",
     "sector": "Digital & TIK",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Kerja hybrid", "Bonus project", "Budget pelatihan game", "Asuransi kesehatan", "Allowance perangkat"]
   },
   {
     "id": 45,
@@ -717,7 +717,7 @@
     "requirements": ["Good looking", "Komunikasi Bagus"],
     "logo": "HR",
     "sector": "Lainnya",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Tunjangan akomodasi", "BPJS", "Bonus event", "Cuti tahunan", "Fasilitas hotel"]
   },
   {
     "id": 46,
@@ -733,7 +733,7 @@
     "requirements": ["Min SMA/SMK", "Cepat mengetik"],
     "logo": "PO",
     "sector": "Digital & TIK",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["BPJS", "Lembur dibayar", "Pelatihan Excel", "Seragam/ID card", "Cuti tahunan"]
   },
   {
     "id": 47,
@@ -749,7 +749,7 @@
     "requirements": ["Style gambar menarik", "Portofolio"],
     "logo": "PB",
     "sector": "Digital & TIK",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Bayaran per buku", "Fleksibilitas waktu", "Hak cipta jelas", "Eksposur portofolio", "Pembayaran milestone"]
   },
   {
     "id": 48,
@@ -765,7 +765,7 @@
     "requirements": ["Paham algoritma Google", "Analitis"],
     "logo": "ST",
     "sector": "Digital & TIK",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Remote full", "Budget tools SEO", "Bonus performa traffic", "Asuransi kesehatan", "Jam fleksibel"]
   },
   {
     "id": 49,
@@ -781,7 +781,7 @@
     "requirements": ["S1 Sistem Informasi", "Pengalaman ERP"],
     "logo": "BUMN",
     "sector": "Digital & TIK",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["BPJS lengkap", "Tunjangan kinerja", "Pelatihan ERP", "Cuti tahunan", "Hybrid sesuai kebijakan"]
   },
   {
     "id": 50,
@@ -797,7 +797,7 @@
     "requirements": ["Punya Motor", "SIM C", "SKCK"],
     "logo": "LA",
     "sector": "Ritel",
-    "benefits": ["Pengalaman industri nyata", "Mentoring profesional", "Jaringan dan relasi kerja", "Peningkatan soft skills", "Kesempatan sertifikasi", "Potensi karier jangka panjang"]
+    "benefits": ["Insentif per order", "Bonus jam sibuk", "Asuransi kecelakaan mitra", "Jadwal fleksibel", "Program kemitraan"]
   }
 ]
 
